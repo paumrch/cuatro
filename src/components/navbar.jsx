@@ -17,7 +17,7 @@ export default function Navbar() {
         { opacity: 0 },
         { opacity: 1, duration: 1, ease: "power2.out" }
       );
-    }, 1000); // Espera 2 segundos antes de mostrar y animar el componente
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -27,7 +27,7 @@ export default function Navbar() {
       <nav className="mx-auto flex items-center justify-between p-6">
         <div>
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">4 de Junio</span>
             <Image
               className="h-4 w-auto"
               src="http://wp.4dejunio.com/wp-content/uploads/2024/04/4dejunio_nuevo_negro.svg"
