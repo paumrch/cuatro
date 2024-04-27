@@ -5,6 +5,7 @@ import Hero from "@/components/hero";
 import FeaturedProjects from "@/components/featuredProjects";
 import Services from "@/components/services";
 import About from "@/components/about";
+import Blog from "@/components/blog";
 
 import { getAllPostsFromWordPress } from "../lib/api";
 
@@ -19,6 +20,7 @@ export default async function Index({ preview }) {
       <FeaturedProjects />
       <Services />
       <About />
+      <Blog />
       <Footer />
     </Layout>
   );

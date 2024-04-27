@@ -14,6 +14,12 @@ const nextConfig = {
         pathname: "/img/**",
       },
       {
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+        pathname: "/200",
+      },
+      {
         protocol: "http",
         hostname: "wp.4dejunio.com",
         port: "",

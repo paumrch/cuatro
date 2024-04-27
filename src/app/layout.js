@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "./globals.css";
 import localFont from "next/font/local";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const myFont = localFont({
   src: [
@@ -74,7 +75,9 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/icon.png" sizes="any" />
       </Head>
-      <body className="text-stone-900 bg-white">{children}</body>
+      <body className="text-stone-900 bg-white">
+        <SmoothScrolling>{children}</SmoothScrolling>
+      </body>
     </html>
   );
 }
