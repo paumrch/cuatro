@@ -25,6 +25,13 @@ const nextConfig = {
         port: "",
         pathname: "/wp-content/**",
       },
+      {
+        protocol: "https",
+        hostname: "wp.4dejunio.com",
+        port: "",
+        pathname: "/wp-content/**",
+      },
+      
     ],
   },
 };

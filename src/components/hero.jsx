@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export default function Hero() {
+import { getHomePageData } from "../lib/api";
+
+export default async function Hero({ preview }) {
+  const homeData = await getHomePageData(preview);
+  const homeHeading = homeData.pages.nodes[0].home.heading;
+  const homeSubheading = homeData.pages.nodes[0].home.subheading;
+  const heroImage = homeData.pages.nodes[0].home.heroImage.sourceUrl;
+  console.log(heroImage);
+
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
       <div className="relative isolate pt-14">
@@ -12,17 +20,14 @@ export default function Hero() {
           <div className="mx-auto">
             <div className="mx-auto text-left">
               <p className="mt-6 text-3xl">
-                <span className="font-semibold">
-                  A digital-first design studio
-                </span>
+                <span className="font-semibold">{homeHeading}</span>
                 <br />
-                Building meaningful brands, websites and apps for global
-                businesses.
+                {homeSubheading}
               </p>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
               <Image
-                src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+                src={heroImage}
                 alt="App screenshot"
                 width={2432}
                 height={1442}
