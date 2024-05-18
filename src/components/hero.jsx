@@ -6,8 +6,7 @@ export default async function Hero({ preview }) {
   const homeData = await getHomePageData(preview);
   const homeHeading = homeData.pages.nodes[0].home.heading;
   const homeSubheading = homeData.pages.nodes[0].home.subheading;
-  const heroImage = homeData.pages.nodes[0].home.heroImage.sourceUrl;
-  console.log(heroImage);
+  const heroImage = homeData.pages.nodes[0].home.heroImage.node.sourceUrl;
 
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
@@ -29,8 +28,8 @@ export default async function Hero({ preview }) {
               <Image
                 src={heroImage}
                 alt="App screenshot"
-                width={2432}
-                height={1442}
+                width={1920}
+                height={1080}
                 className="rounded-md"
               />
             </div>

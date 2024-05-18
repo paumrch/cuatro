@@ -12,7 +12,7 @@ export default function About() {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">Why us</h2>
+                <h2 className="text-3xl">¿Por qué?</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2">
                 <p>

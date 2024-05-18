@@ -121,8 +121,6 @@ export async function getAllPostsForHome(preview) {
   return data?.posts;
 }
 
-// Get Homepage data
-
 export async function getHomePageData() {
   const data = await fetchAPI(`
   query Home {
@@ -136,14 +134,42 @@ export async function getHomePageData() {
         home {
           heading
           subheading
+          servicesTitle
+          servicesIntro
           heroImage {
-            id
-            sourceUrl
+            node {
+              sourceUrl
+            }
           }
         }
       }
     }
   }
+  `);
+
+  return data;
+}
+
+
+export async function getProjectsData() {
+  const data = await fetchAPI(`
+    query Projects {
+      projects {
+        edges {
+          node {
+            projectsContent {
+              projectTitle
+              projectCategory
+              projectPicture {
+                node {
+                  sourceUrl
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   `);
 
   return data;
