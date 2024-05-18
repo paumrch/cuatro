@@ -22,13 +22,13 @@ export default async function Services({ preview }) {
                 {servicesIntro}
                 </p>
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
-                  Servicio 1
+                  Branding
                 </h3>
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
-                  Servicio 2
+                  Diseño y desarrollo web
                 </h3>
                 <h3 className="relative isolate border-t border-b border-stone-900/10 mt-4 py-4 text-xl">
-                  Servicio 3
+                  Social Media & Paid
                 </h3>
               </div>
             </div>

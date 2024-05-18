@@ -12,74 +12,73 @@ export default function About() {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">¿Por qué?</h2>
+                <h2 className="text-3xl">Identidad</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2">
                 <p>
-                  Our expertise lies at the intersection of design and
-                  technology, providing you with integrated thinking without
-                  sacrificing one for the other.
+                  Mentes abiertas, creativas y tecnológicas para desarrollar
+                  proyectos digitales de primer nivel.
                 </p>
               </div>
             </div>
 
             <div className="mt-12 sm:mt-24">
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6">
+              <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/KOME.svg"
+                      alt="KOME"
                       width={125}
                       height={125}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/Techne183.svg"
+                      alt="Techné 183"
                       width={125}
                       height={125}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/G2-Care.svg"
+                      alt="G2 Care"
                       width={125}
                       height={125}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/DraIsabelCamps.svg"
+                      alt="Dra. Isabel Camps"
                       width={125}
                       height={125}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/MAVERICK.svg"
+                      alt="MAVERICK"
                       width={125}
                       height={125}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg">
+                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                      alt="App screenshot"
+                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/Luzzio.svg"
+                      alt="Luzzio"
                       width={125}
                       height={125}
                     />
