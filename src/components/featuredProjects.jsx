@@ -1,16 +1,8 @@
 import Image from "next/image";
-
 import { getProjectsData } from "../lib/api";
 
-export default async function Hero({ preview }) {
-  const projectseData = await getProjectsData(preview);
-  const project1Title =
-    projectseData.projects.edges[0].node.projectsContent.projectTitle;
-  const project1Category =
-    projectseData.projects.edges[0].node.projectsContent.projectCategory;
-  const project1Image =
-    projectseData.projects.edges[0].node.projectsContent.projectPicture.node
-      .sourceUrl;
+export default async function Projects({ preview }) {
+  const projectsData = await getProjectsData(preview);
 
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
@@ -24,47 +16,29 @@ export default async function Hero({ preview }) {
             <div className="mx-auto text-left">
               <h2 className="mt-4 text-3xl">Proyectos</h2>
             </div>
-            <div className="flex flex-col sm:flex-row mt-8 gap-6 sm:mt-24">
-              <div id="Element" className="w-full">
-                <Image
-                  src={project1Image}
-                  alt="App screenshot"
-                  width={1080}
-                  height={1080}
-                  className="rounded-lg"
-                />
-                <div
-                  id="infoElement"
-                  className="flex justify-between mt-6 text-2xl"
-                >
-                  <h3 id="title" className="">
-                    {project1Title}
-                  </h3>
-                  <p id="category" className="mr-12 text-stone-600">
-                    {project1Category}
-                  </p>
-                </div>
-              </div>
-              <div id="Element" className="w-full">
-                <Image
-                  src={project1Image}
-                  alt="App screenshot"
-                  width={1080}
-                  height={1080}
-                  className="rounded-lg"
-                />
-                <div
-                  id="infoElement"
-                  className="flex justify-between mt-6 text-2xl"
-                >
-                  <h3 id="title" className="">
-                    Hola
-                  </h3>
-                  <p id="category" className="mr-12 text-stone-600">
-                    Brand
-                  </p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-24">
+              {projectsData.projects.edges.map(({ node }) => {
+                const { projectTitle, projectCategory, projectPicture } =
+                  node.projectsContent;
+                return (
+                  <div className="w-full" key={projectTitle}>
+                    <div className="aspect-video bg-stone-900 rounded-lg overflow-hidden">
+                      <Image
+                        src={projectPicture.node.sourceUrl}
+                        alt={projectTitle}
+                        width={1920}
+                        height={1080}
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="flex justify-between mt-6 text-2xl">
+                      <h3 className="">{projectTitle}</h3>
+                      <p className="mr-12 text-stone-600">{projectCategory}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

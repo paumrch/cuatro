@@ -25,62 +25,62 @@ export default function About() {
             <div className="mt-12 sm:mt-24">
               <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/KOME.svg"
                       alt="KOME"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/Techne183.svg"
                       alt="Techné 183"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/G2-Care.svg"
                       alt="G2 Care"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/DraIsabelCamps.svg"
                       alt="Dra. Isabel Camps"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/MAVERICK.svg"
                       alt="MAVERICK"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
                 <li>
-                  <div className="bg-stone-900 p-12 rounded-lg flex items-center h-32 justify-center">
+                  <div className="bg-stone-800 p-12 rounded-lg flex items-center h-32 justify-center">
                     <Image
                       src="http://wp.4dejunio.com/wp-content/uploads/2024/05/Luzzio.svg"
                       alt="Luzzio"
-                      width={125}
-                      height={125}
+                      width={90}
+                      height={90}
                     />
                   </div>
                 </li>
