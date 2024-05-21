@@ -29,6 +29,7 @@ export default async function Hero({ preview }) {
                 height="1080"
                 muted
                 autoPlay
+                playsInline
                 loop
                 preload="auto"
               >
