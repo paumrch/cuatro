@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { getAllPostsForHome } from "@/lib/api";
+import { format } from 'date-fns';
 
-export default function Blog() {
+export default async function Blog({ preview }) {
+  const postsForHome = await getAllPostsForHome(preview);
+
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
       <div className="relative isolate border-t border-stone-900/10">
@@ -13,79 +17,30 @@ export default function Blog() {
             <div className="text-left w-full sm:w-1/2 mt-8">
               <h2 className="text-3xl">Blog</h2>
             </div>
-            <div className="flex flex-col md:flex-row gap-6 md:gap-4 my-8">
-              <div id="post" className="flex flex-row md:flex-col gap-6 w-full">
-                <div className="w-1/3 md:w-full">
-                  <Image
-                    src="https://picsum.photos/200"
-                    alt="App screenshot"
-                    width={100}
-                    height={100}
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div id="postInfo" className="w-2/3 md:w-full">
-                  <span>Category</span>
-                  <h4 id="title" className="text-xl font-semibold">
-                    Hola este es el título del post
-                  </h4>
-                  <span>Date</span>
-                </div>
-              </div>
-              <div id="post" className="flex flex-row md:flex-col gap-6 w-full">
-                <div className="w-1/3 md:w-full">
-                  <Image
-                    src="https://picsum.photos/200"
-                    alt="App screenshot"
-                    width={125}
-                    height={125}
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div id="postInfo" className="w-2/3 md:w-full">
-                  <span>Category</span>
-                  <h4 id="title" className="text-xl font-semibold">
-                    Hola este es el título del post
-                  </h4>
-                  <span>Date</span>
-                </div>
-              </div>
-              <div id="post" className="flex flex-row md:flex-col gap-6 w-full">
-                <div className="w-1/3 md:w-full">
-                  <Image
-                    src="https://picsum.photos/200"
-                    alt="App screenshot"
-                    width={125}
-                    height={125}
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div id="postInfo" className="w-2/3 md:w-full">
-                  <span>Category</span>
-                  <h4 id="title" className="text-xl font-semibold">
-                    Hola este es el título del post
-                  </h4>
-                  <span>Date</span>
-                </div>
-              </div>
-              <div id="post" className="flex flex-row md:flex-col gap-6 w-full">
-                <div className="w-1/3 md:w-full">
-                  <Image
-                    src="https://picsum.photos/200"
-                    alt="App screenshot"
-                    width={125}
-                    height={125}
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div id="postInfo" className="w-2/3 md:w-full">
-                  <span>Category</span>
-                  <h4 id="title" className="text-xl font-semibold">
-                    Hola este es el título del post
-                  </h4>
-                  <span>Date</span>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+              {postsForHome.edges.map(({ node: post }) => {
+                const formattedDate = format(new Date(post.date), 'dd.MM.yyyy');
+                return (
+                  <div key={post.slug} className="flex flex-col gap-4">
+                    <div className="aspect-square rounded-lg overflow-hidden">
+                      <Image
+                        src={post.featuredImage.node.sourceUrl}
+                        alt={post.title}
+                        width={1080}
+                        height={1080}
+                        className="rounded-lg object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                    <div className="flex gap-4 text-sm uppercase font-normal justify-between">
+                        <span>{post.categories.edges[0].node.name}</span>
+                        <span>{formattedDate}</span>
+                      </div>
+                      <p className="text-2xl font-semibold">{post.title}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

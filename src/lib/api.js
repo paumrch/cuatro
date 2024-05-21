@@ -30,18 +30,16 @@ async function fetchAPI(query = "", { variables } = {}) {
 // Get the first 20 posts from WordPress, ordered by the date
 export async function getAllPostsFromWordPress(preview) {
   const data = await fetchAPI(`
-      query AllPosts {
-        posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
-          edges {
-            node {
-              title
-              excerpt
-              slug
-              date
-            }
-          }
+  query Posts {
+    posts(where: {categoryName: "Thinktank", tag: "Home"}, first: 4) {
+      edges {
+        node {
+          title
+          slug
         }
       }
+    }
+  }
     `);
 
   return data.posts;
@@ -83,12 +81,19 @@ export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
   query AllPosts {
-    posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+    posts(where: {categoryName: "Thinktank", tag: "Home"}, first: 4) {
       edges {
         node {
           title
           excerpt
           slug
+          categories {
+            edges {
+              node {
+                name
+              }
+            }
+          }
           date
           featuredImage {
             node {
@@ -141,6 +146,7 @@ export async function getHomePageData() {
               sourceUrl
             }
           }
+          heroVideo
         }
       }
     }
@@ -149,7 +155,6 @@ export async function getHomePageData() {
 
   return data;
 }
-
 
 export async function getProjectsData() {
   const data = await fetchAPI(`

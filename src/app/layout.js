@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/icon.png" sizes="any" />
       </Head>
-      <body className="text-stone-900 bg-white">
+      <body className="text-stone-900 bg-stone-50">
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>

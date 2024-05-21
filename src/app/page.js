@@ -11,7 +11,7 @@ import { getAllPostsFromWordPress } from "../lib/api";
 
 export default async function Index({ preview }) {
   const allPosts = await getAllPostsFromWordPress(preview);
-  const firtsPost = allPosts.edges[0].node;
+  const firtsPost = allPosts.edges[0]?.node;
 
   return (
     <Layout>

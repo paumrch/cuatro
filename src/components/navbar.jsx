@@ -23,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="bg-white">
+    <header className="">
       <nav className="mx-auto flex items-center justify-between p-6">
         <div>
           <a href="#" className="-m-1.5 p-1.5">

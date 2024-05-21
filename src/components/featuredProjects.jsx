@@ -28,7 +28,6 @@ export default async function Projects({ preview }) {
                         alt={projectTitle}
                         width={1920}
                         height={1080}
-                        objectFit="cover"
                         className="rounded-lg"
                       />
                     </div>
