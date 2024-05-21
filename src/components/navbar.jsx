@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Time from "./time";
 
+import Link from 'next/link';
+
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -26,7 +28,7 @@ export default function Navbar() {
     <header className="">
       <nav className="mx-auto flex items-center justify-between p-6">
         <div>
-          <a href="#" className="-m-1.5 p-1.5">
+        <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">4 de Junio</span>
             <Image
               className="h-4 w-auto"
@@ -35,7 +37,7 @@ export default function Navbar() {
               width={100}
               height={100}
             />
-          </a>
+          </Link>
         </div>
         <div
           className={`relative flex items-center text-xs animated-component ${

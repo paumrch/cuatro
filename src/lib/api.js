@@ -139,14 +139,8 @@ export async function getHomePageData() {
         home {
           heading
           subheading
-          servicesTitle
-          servicesIntro
-          heroImage {
-            node {
-              sourceUrl
-            }
-          }
-          heroVideo
+          servicestitle
+          servicesintro
         }
       }
     }
@@ -186,7 +180,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id
-    : slug === postPreview.slug;
+    : slug === postPreview?.slug;
   const isDraft = isSamePost && postPreview?.status === "draft";
   const isRevision = isSamePost && postPreview?.status === "publish";
   const data = await fetchAPI(

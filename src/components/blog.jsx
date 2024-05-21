@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getAllPostsForHome } from "@/lib/api";
-import { format } from 'date-fns';
+import { format } from "date-fns";
+import Link from "next/link";
 
 export default async function Blog({ preview }) {
   const postsForHome = await getAllPostsForHome(preview);
@@ -19,25 +20,31 @@ export default async function Blog({ preview }) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
               {postsForHome.edges.map(({ node: post }) => {
-                const formattedDate = format(new Date(post.date), 'dd.MM.yyyy');
+                const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
                 return (
                   <div key={post.slug} className="flex flex-col gap-4">
-                    <div className="aspect-square rounded-lg overflow-hidden">
-                      <Image
-                        src={post.featuredImage.node.sourceUrl}
-                        alt={post.title}
-                        width={1080}
-                        height={1080}
-                        className="rounded-lg object-cover w-full h-full"
-                      />
-                    </div>
-                    <div>
-                    <div className="flex gap-4 text-sm uppercase font-normal justify-between">
-                        <span>{post.categories.edges[0].node.name}</span>
-                        <span>{formattedDate}</span>
-                      </div>
-                      <p className="text-2xl font-semibold">{post.title}</p>
-                    </div>
+                    <Link href={`/blog/${post.slug}`}>
+                        <div className="aspect-square rounded-lg overflow-hidden">
+                          <Image
+                            src={post.featuredImage.node.sourceUrl}
+                            alt={post.title}
+                            width={1080}
+                            height={1080}
+                            className="rounded-lg object-cover w-full h-full"
+                          />
+                        </div>
+                    </Link>
+                    <Link href={`/posts/${post.slug}`}>
+
+                        <div>
+                          <div className="flex gap-4 text-sm uppercase font-normal justify-between">
+                            <span>{post.categories.edges[0].node.name}</span>
+                            <span>{formattedDate}</span>
+                          </div>
+                          <p className="text-2xl font-medium">{post.title}</p>
+                        </div>
+
+                    </Link>
                   </div>
                 );
               })}

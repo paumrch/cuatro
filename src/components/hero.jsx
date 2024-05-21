@@ -6,9 +6,6 @@ export default async function Hero({ preview }) {
   const homeData = await getHomePageData(preview);
   const homeHeading = homeData.pages.nodes[0].home.heading;
   const homeSubheading = homeData.pages.nodes[0].home.subheading;
-  const heroImage = homeData.pages.nodes[0].home.heroImage.node.sourceUrl;
-  const heroVideoUrl = homeData.pages.nodes[0].home.heroVideo;
-  const heroVideoEmbed = homeData.pages.nodes[0].home.heroVideo;
 
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
@@ -21,21 +18,11 @@ export default async function Hero({ preview }) {
           <div className="mx-auto">
             <div className="mx-auto text-left">
               <p className="mt-6 text-3xl">
-                <span className="font-semibold">{homeHeading}</span>
+                <span className="font-medium">{homeHeading}</span>
                 <br />
                 {homeSubheading}
               </p>
             </div>
-            {/* <div className="mt-16 flow-root sm:mt-24">
-              <Image
-                src={heroImage}
-                alt="App screenshot"
-                width={1920}
-                height={1080}
-                className="rounded-md"
-              />
-            </div> */}
-
             <div className="mt-16 flow-root sm:mt-24 object-contain">
               <video
                 width="1920"

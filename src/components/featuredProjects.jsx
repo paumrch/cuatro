@@ -33,7 +33,7 @@ export default async function Projects({ preview }) {
                     </div>
                     <div className="flex justify-between mt-6 text-2xl">
                       <h3 className="">{projectTitle}</h3>
-                      <p className="mr-12 text-stone-600">{projectCategory}</p>
+                      <p className="text-stone-600 text-lg">{projectCategory}</p>
                     </div>
                   </div>
                 );

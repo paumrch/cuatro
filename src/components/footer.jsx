@@ -69,7 +69,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-stone-900/10 pt-8 sm:mt-10 lg:mt-12 lg:flex lg:items-center lg:justify-between">
           <div>
-            <h3 className="text-sm font-semibold leading-6 text-stone-900">
+            <h3 className="text-sm font-medium leading-6 text-stone-900">
               Suscríbete, tenemos algo que contarte.
             </h3>
             <p className="mt-2 text-sm leading-6 text-stone-600">

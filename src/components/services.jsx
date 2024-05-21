@@ -2,8 +2,8 @@ import { getHomePageData } from "../lib/api";
 
 export default async function Services({ preview }) {
   const homeData = await getHomePageData(preview);
-  const servicesTitle = homeData.pages.nodes[0].home.servicesTitle;
-  const servicesIntro = homeData.pages.nodes[0].home.servicesIntro;
+  const servicesTitle = homeData.pages.nodes[0].home.servicestitle;
+  const servicesIntro = homeData.pages.nodes[0].home.servicesintro;
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
       <div className="relative isolate border-t border-stone-900/10">
@@ -18,7 +18,7 @@ export default async function Services({ preview }) {
                 <h2 className="text-3xl">{servicesTitle}</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2">
-                <p>
+                <p className="">
                 {servicesIntro}
                 </p>
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
@@ -27,7 +27,7 @@ export default async function Services({ preview }) {
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
                   Diseño y desarrollo web
                 </h3>
-                <h3 className="relative isolate border-t border-b border-stone-900/10 mt-4 py-4 text-xl">
+                <h3 className="relative isolate border-t border-stone-900/10 mt-4 py-4 text-xl">
                   Social Media & Paid
                 </h3>
               </div>
