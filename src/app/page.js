@@ -7,12 +7,33 @@ import Services from "@/components/services";
 import About from "@/components/about";
 import Blog from "@/components/blog";
 
-import { getAllPostsFromWordPress } from "../lib/api";
+import { getHomePageData } from "../lib/api";
 
-export default async function Index({ preview }) {
-  const allPosts = await getAllPostsFromWordPress(preview);
-  const firtsPost = allPosts.edges[0]?.node;
+export async function generateMetadata() {
+  const homePageData = await getHomePageData();
+  const metadata = homePageData.pages.edges[0].node.seo;
 
+  return {
+    title: metadata.title || "4 de Junio",
+    description: metadata.description,
+    canonical: metadata.canonicalUrl,
+    openGraph: {
+      title: metadata.openGraph?.title,
+      description: metadata.openGraph?.description,
+      images: [{ url: metadata.openGraph?.image?.secureUrl }],
+      url: metadata.openGraph?.url,
+      site_name: metadata.openGraph?.siteName,
+    },
+    twitter: {
+      card: metadata.openGraph?.twitterMeta?.card,
+      title: metadata.openGraph?.twitterMeta?.title,
+      description: metadata.openGraph?.twitterMeta?.description,
+      site: metadata.openGraph?.twitterMeta?.site,
+    },
+  };
+}
+
+export default function Index() {
   return (
     <Layout>
       <Navbar />

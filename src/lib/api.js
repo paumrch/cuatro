@@ -69,6 +69,11 @@ export async function getAllPostsWithSlug() {
         edges {
           node {
             slug
+            seo {
+              canonicalUrl
+              description
+              title
+            }
           }
         }
       }
@@ -133,6 +138,11 @@ export async function getHomePageData() {
       edges {
         node {
           id
+          seo {
+            canonicalUrl
+            description
+            title
+          }
         }
       }
       nodes {
@@ -214,6 +224,11 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
           name
         }
       }
+    }
+    seo {
+      canonicalUrl
+      description
+      title
     }
     tags {
       edges {

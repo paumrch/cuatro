@@ -8,6 +8,39 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+// Implementing generateMetadata function
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const data = await getPostAndMorePosts(slug);
+
+  if (!data.post) {
+    return {
+      title: "Post Not Found",
+      description: "The post you are looking for does not exist.",
+    };
+  }
+
+  const { seo } = data.post;
+
+  return {
+    title: seo.title || "Post Title",
+    description: seo.description || "Post Description",
+    canonical: seo.canonicalUrl || "https://yourwebsite.com",
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: [{ url: data.post.featuredImage?.node?.sourceUrl }],
+      url: seo.canonicalUrl,
+      site_name: "Your Website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+    },
+  };
+}
+
 export default async function Post({ params }) {
   const { slug } = params;
   const data = await getPostAndMorePosts(slug);
