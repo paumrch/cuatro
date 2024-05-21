@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "./globals.css";
 import localFont from "next/font/local";
-import SmoothScrolling from "@/components/SmoothScrolling";
+import SmoothScrolling from "../components/smoothScrolling";
 
 const myFont = localFont({
   src: [
