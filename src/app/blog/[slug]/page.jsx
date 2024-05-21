@@ -30,20 +30,22 @@ export default async function Post({ params }) {
                 <h1 className="text-3xl font-semibold">{post.title}</h1>
                 <div className="flex gap-4 mt-4">
                   <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
-                    {post.categories.edges[0]?.node.name}
+                    {post.categories.edges[0]?.node?.name || "No Category"}
                   </span>
                   <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
                     {formattedDate}
                   </span>
                 </div>
                 <div className="mt-8">
-                  <Image
-                    src={post.featuredImage.node.sourceUrl}
-                    alt={post.title}
-                    width={1920}
-                    height={1080}
-                    className="rounded-lg aspect-video object-cover"
-                  />
+                  {post.featuredImage?.node?.sourceUrl && (
+                    <Image
+                      src={post.featuredImage.node.sourceUrl}
+                      alt={post.title}
+                      width={1920}
+                      height={1080}
+                      className="rounded-lg aspect-video object-cover"
+                    />
+                  )}
                 </div>
                 <div className="mt-8">
                   <div
