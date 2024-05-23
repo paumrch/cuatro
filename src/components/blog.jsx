@@ -18,7 +18,7 @@ export default async function Blog({ preview }) {
             <div className="text-left w-full sm:w-1/2 mt-8">
               <h2 className="text-3xl">Blog</h2>
             </div>
-            <div className="sm:hidden flex overflow-x-auto my-8">
+            <div className="sm:hidden flex overflow-x-auto my-8 no-scrollbar">
               <div className="flex flex-nowrap space-x-6">
                 {postsForHome.edges.map(({ node: post }) => {
                   const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
@@ -67,7 +67,7 @@ export default async function Blog({ preview }) {
                     </Link>
                     <Link href={`/posts/${post.slug}`}>
                       <div>
-                        <div className="flex gap-4 text-sm uppercase font-normal justify-between">
+                        <div className="flex gap-4 text-sm uppercase font-normal justify-between no-scrollbar">
                           <span>{post.categories.edges[0].node.name}</span>
                           <span>{formattedDate}</span>
                         </div>
