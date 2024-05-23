@@ -74,7 +74,7 @@ export default async function Blog({ preview }) {
                           <span>{post.categories.edges[0].node.name}</span>
                           <span>{formattedDate}</span>
                         </div>
-                        <p className="text-2xl font-medium">{post.title}</p>
+                        <p className="text-xl font-medium">{post.title}</p>
                       </div>
                     </Link>
                   </div>
