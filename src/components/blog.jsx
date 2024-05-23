@@ -37,8 +37,8 @@ export default async function Blog({ preview }) {
                       </Link>
                       <Link href={`/posts/${post.slug}`}>
                         <div>
-                          <div className="flex gap-4 text-sm uppercase font-normal justify-between">
-                            <span>{post.categories.edges[0].node.name}</span>
+                          <div className="flex my-4 gap-4 uppercase font-normal justify-between text-xs">
+                            <span className="">{post.categories.edges[0].node.name}</span>
                             <span>{formattedDate}</span>
                           </div>
                           <p className="text-2xl font-medium">{post.title}</p>
@@ -66,8 +66,8 @@ export default async function Blog({ preview }) {
                       </div>
                     </Link>
                     <Link href={`/posts/${post.slug}`}>
-                      <div>
-                        <div className="flex gap-4 text-sm uppercase font-normal justify-between no-scrollbar">
+                      <div className="">
+                        <div className="flex mt-4 gap-4 text-sm uppercase font-normal justify-between no-scrollbar">
                           <span>{post.categories.edges[0].node.name}</span>
                           <span>{formattedDate}</span>
                         </div>
