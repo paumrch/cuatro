@@ -18,7 +18,7 @@ export default async function Hero({ preview }) {
           <div className="mx-auto">
             <div className="mx-auto text-left">
               <AnimatedElement animation={{ duration: 1 }} delay={1}>
-                <p className="mt-6 text-3xl">
+                <p className="mt-6 text-2xl">
                   <span className="font-medium">{homeHeading}</span>
                   <br />
                   {homeSubheading}

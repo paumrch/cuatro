@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getAllPostsForHome } from "@/lib/api";
 import { format } from "date-fns";
 import Link from "next/link";
+import HorizontalSmoothScrolling from "./HorizontalSmoothScrolling";
 
 export default async function Blog({ preview }) {
   const postsForHome = await getAllPostsForHome(preview);
@@ -18,32 +19,63 @@ export default async function Blog({ preview }) {
             <div className="text-left w-full sm:w-1/2 mt-8">
               <h2 className="text-3xl">Blog</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+            <div className="sm:hidden flex overflow-x-auto my-8">
+              <HorizontalSmoothScrolling>
+                <div className="flex flex-nowrap space-x-6">
+                  {postsForHome.edges.map(({ node: post }) => {
+                    const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
+                    return (
+                      <div key={post.slug} className="flex-none w-64">
+                        <Link href={`/blog/${post.slug}`}>
+                          <div className="aspect-square rounded-lg overflow-hidden">
+                            <Image
+                              src={post.featuredImage.node.sourceUrl}
+                              alt={post.title}
+                              width={1080}
+                              height={1080}
+                              className="rounded-lg object-cover w-full h-full"
+                            />
+                          </div>
+                        </Link>
+                        <Link href={`/posts/${post.slug}`}>
+                          <div>
+                            <div className="flex gap-4 text-sm uppercase font-normal justify-between">
+                              <span>{post.categories.edges[0].node.name}</span>
+                              <span>{formattedDate}</span>
+                            </div>
+                            <p className="text-2xl font-medium">{post.title}</p>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
+              </HorizontalSmoothScrolling>
+            </div>
+            <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
               {postsForHome.edges.map(({ node: post }) => {
                 const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
                 return (
                   <div key={post.slug} className="flex flex-col gap-4">
                     <Link href={`/blog/${post.slug}`}>
-                        <div className="aspect-square rounded-lg overflow-hidden">
-                          <Image
-                            src={post.featuredImage.node.sourceUrl}
-                            alt={post.title}
-                            width={1080}
-                            height={1080}
-                            className="rounded-lg object-cover w-full h-full"
-                          />
-                        </div>
+                      <div className="aspect-square rounded-lg overflow-hidden">
+                        <Image
+                          src={post.featuredImage.node.sourceUrl}
+                          alt={post.title}
+                          width={1080}
+                          height={1080}
+                          className="rounded-lg object-cover w-full h-full"
+                        />
+                      </div>
                     </Link>
                     <Link href={`/posts/${post.slug}`}>
-
-                        <div>
-                          <div className="flex gap-4 text-sm uppercase font-normal justify-between">
-                            <span>{post.categories.edges[0].node.name}</span>
-                            <span>{formattedDate}</span>
-                          </div>
-                          <p className="text-2xl font-medium">{post.title}</p>
+                      <div>
+                        <div className="flex gap-4 text-sm uppercase font-normal justify-between">
+                          <span>{post.categories.edges[0].node.name}</span>
+                          <span>{formattedDate}</span>
                         </div>
-
+                        <p className="text-2xl font-medium">{post.title}</p>
+                      </div>
                     </Link>
                   </div>
                 );
