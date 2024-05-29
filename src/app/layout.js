@@ -72,24 +72,6 @@ export default function RootLayout({ children, metadata = {} }) {
         <title>HOLA</title>
         <meta name="description" content={metadata?.description} />
         <link rel="canonical" href={metadata?.canonicalUrl} />
-
-
-        {/* Open Graph Meta Tags */}
-
-
-        {/* <meta property="og:title" content={metadata?.openGraph?.title} />
-        <meta property="og:description" content={metadata?.openGraph?.description} />
-        <meta property="og:image" content={metadata?.openGraph?.image?.secureUrl} />
-        <meta property="og:url" content={metadata?.openGraph?.url} />
-        <meta property="og:site_name" content={metadata?.openGraph?.siteName} /> */}
-
-
-        {/* Twitter Meta Tags */}
-
-        {/* <meta name="twitter:card" content={metadata?.openGraph?.twitterMeta?.card} />
-        <meta name="twitter:title" content={metadata?.openGraph?.twitterMeta?.title} />
-        <meta name="twitter:description" content={metadata?.openGraph?.twitterMeta?.description} />
-        <meta name="twitter:site" content={metadata?.openGraph?.twitterMeta?.site} /> */}
       </Head>
       <body className="text-stone-900 bg-stone-50">
         <SmoothScrolling>{children}</SmoothScrolling>
