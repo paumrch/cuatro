@@ -16,7 +16,7 @@ export default async function Blog({ preview }) {
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
             <div className="text-left w-full sm:w-1/2 mt-8">
-              <h2 className="text-3xl">Blog</h2>
+              <h2 className="text-3xl">Think Tank</h2>
             </div>
             <div className="sm:hidden flex overflow-x-auto my-8 no-scrollbar">
               <div className="flex flex-nowrap space-x-6">

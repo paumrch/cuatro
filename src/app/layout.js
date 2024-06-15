@@ -69,7 +69,6 @@ export default function RootLayout({ children, metadata = {} }) {
     <html lang="es" className={myFont.className}>
       <Head>
         <link rel="icon" href="/icon.png" sizes="any" />
-        <title>HOLA</title>
         <meta name="description" content={metadata?.description} />
         <link rel="canonical" href={metadata?.canonicalUrl} />
       </Head>

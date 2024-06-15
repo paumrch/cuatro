@@ -149,8 +149,6 @@ export async function getHomePageData() {
         home {
           heading
           subheading
-          servicestitle
-          servicesintro
         }
       }
     }

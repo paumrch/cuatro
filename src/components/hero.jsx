@@ -1,6 +1,5 @@
 import AnimatedVideo from "./animated/AnimatedVideo";
 import { getHomePageData } from "../lib/api";
-import AnimatedElement from "./AnimatedElement";
 
 export default async function Hero({ preview }) {
   const homeData = await getHomePageData(preview);
@@ -17,13 +16,11 @@ export default async function Hero({ preview }) {
         <div className="py-24 sm:py-32 lg:pb-40">
           <div className="mx-auto">
             <div className="mx-auto text-left">
-              <AnimatedElement animation={{ duration: 1 }} delay={1}>
-                <p className="mt-6 text-2xl">
-                  <span className="font-medium">{homeHeading}</span>
-                  <br />
-                  {homeSubheading}
-                </p>
-              </AnimatedElement>
+              <p className="mt-6 text-2xl">
+                <span className="font-medium">{homeHeading}</span>
+                <br />
+                {homeSubheading}
+              </p>
             </div>
             <div className="mt-16 flow-root sm:mt-24 object-contain">
               <AnimatedVideo />

@@ -2,8 +2,6 @@ import { getHomePageData } from "../lib/api";
 
 export default async function Services({ preview }) {
   const homeData = await getHomePageData(preview);
-  const servicesTitle = homeData.pages.nodes[0].home.servicestitle;
-  const servicesIntro = homeData.pages.nodes[0].home.servicesintro;
   return (
     <div className="mx-auto px-6 pb-8 lg:px-8">
       <div className="relative isolate border-t border-stone-900/10">
@@ -15,11 +13,11 @@ export default async function Services({ preview }) {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">{servicesTitle}</h2>
+                <h2 className="text-3xl">Services</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2">
                 <p className="">
-                {servicesIntro}
+                  Acompañamos tu proyecto desde su nacimiento y te ayudamos a desarrollarlo en la dirección adecueada.
                 </p>
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
                   Branding
