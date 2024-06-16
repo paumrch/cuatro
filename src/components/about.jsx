@@ -12,9 +12,9 @@ export default function About() {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">Identidad</h2>
+                <h2 className="text-3xl">About</h2>
               </div>
-              <div id="IdentidadContent" className="w-full sm:w-1/2">
+              <div id="IdentidadContent" className="w-full sm:w-1/2 text-stone-600">
                 <p>
                   Mentes abiertas, creativas y tecnológicas para desarrollar
                   proyectos digitales de primer nivel y narrativas de marca únicas para los clientes más especiales.

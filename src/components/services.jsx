@@ -16,7 +16,7 @@ export default async function Services({ preview }) {
                 <h2 className="text-3xl">Services</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2">
-                <p className="">
+                <p className="text-stone-600">
                   Acompañamos tu proyecto desde su nacimiento y te ayudamos a desarrollarlo en la dirección adecueada.
                 </p>
                 <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
