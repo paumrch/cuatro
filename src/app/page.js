@@ -12,6 +12,7 @@ import { getHomePageData } from "../lib/api";
 export async function generateMetadata() {
   const homePageData = await getHomePageData();
   const metadata = homePageData.pages.edges[0].node.seo;
+  console.log(metadata)
 
   return {
     title: metadata.title || "4 de Junio",

@@ -139,9 +139,16 @@ export async function getHomePageData() {
         node {
           id
           seo {
-            canonicalUrl
+          canonicalUrl
+          description
+          openGraph {
             description
+            image {
+              url
+            }
             title
+            updatedTime
+           }
           }
         }
       }
