@@ -5,7 +5,7 @@ import AnimatedElement from "../AnimatedElement";
 
 const AnimatedVideo = () => {
   return (
-    <AnimatedElement animation={{ duration: 1 }} delay={2}>
+    <AnimatedElement animation={{ duration: 0.7 }} delay={1}>
       <video
         width="1920"
         height="1080"
