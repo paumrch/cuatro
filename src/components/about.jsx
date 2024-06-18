@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export default function About() {
   return (
@@ -14,10 +15,26 @@ export default function About() {
               <div className="text-left w-full sm:w-1/2">
                 <h2 className="text-3xl">About</h2>
               </div>
-              <div id="IdentidadContent" className="w-full sm:w-1/2 text-stone-600">
+              <div
+                id="IdentidadContent"
+                className="w-full sm:w-1/2 text-stone-600 text-lg md:text-xl"
+              >
                 <p>
                   Mentes abiertas, creativas y tecnológicas para desarrollar
-                  proyectos digitales de primer nivel y narrativas de marca únicas para los clientes más especiales.
+                  proyectos digitales de primer nivel y narrativas de marca
+                  únicas para los clientes más especiales.
+                </p>
+                <p className="text-lg mt-4 hover:underline">
+                  <a
+                    href="https://linkedin.com/company/4dejunio/"
+                    className="flex items-center group"
+                  >
+                    <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
+                    Conócenos en LinkedIn
+                    <span className="relative overflow-hidden">
+                      <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                    </span>
+                  </a>
                 </p>
               </div>
             </div>
