@@ -28,6 +28,7 @@ export default function About() {
                   <a
                     href="https://linkedin.com/company/4dejunio/"
                     className="flex items-center group"
+                    target="_blank"
                   >
                     <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
                     Conócenos en LinkedIn
