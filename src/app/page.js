@@ -42,7 +42,7 @@ export default function Index() {
       <FeaturedProjects />
       <Services />
       <About />
-      {/* <Blog /> */}
+      <Blog />
       <Footer />
     </Layout>
   );

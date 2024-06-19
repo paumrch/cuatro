@@ -191,29 +191,43 @@ export async function getProjectsData(slug) {
 }
 
 export async function getProjectAndMoreProjects(slug) {
-  const data = await fetchAPI(
-    `
-    query ProjectBySlug($id: ID!, $idType: ProjectIdType!) {
-      project(id: $id, idType: $idType) {
-        ...ProjectFields
+  const data = await fetchAPI(`
+    query ProjectBySlug($slug: String!) {
+      projectBySlug(slug: $slug) {
+        title
+        date
         content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        categories {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+        seo {
+          title
+          description
+          canonicalUrl
+        }
       }
-    }
-    projects(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
-      edges {
-        node {
-          ...ProjectFields
+      moreProjects: projects(first: 3, where: { orderby: { field: DATE, order: DESC }, notIn: [$slug] }) {
+        edges {
+          node {
+            title
+            slug
+          }
         }
       }
     }
-    `
-  );
-  console.log(data)
+  `, { slug });
+
   return data;
 }
-
-
-
 
 export async function getAllProjectsWithSlug() {
   const data = await fetchAPI(`
@@ -228,7 +242,7 @@ export async function getAllProjectsWithSlug() {
     }
   `);
 
-  return data.projects;
+  return data?.projects;
 }
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
