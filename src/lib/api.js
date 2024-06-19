@@ -191,7 +191,6 @@ export async function getProjectsData() {
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
   const postPreview = preview && previewData?.post;
-  // The slug may be the id of an unpublished post
   const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id

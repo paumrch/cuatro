@@ -9,18 +9,22 @@ import Blog from "@/components/blog";
 
 import { getHomePageData } from "../lib/api";
 
+import { decodeHTMLEntities } from "../utils/decodeHTMLEntities"; 
+
 export async function generateMetadata() {
   const homePageData = await getHomePageData();
   const metadata = homePageData.pages.edges[0].node.seo;
-  console.log(metadata)
+
+  const decodedTitle = decodeHTMLEntities(metadata.openGraph.title);
+  const decodedDescription = decodeHTMLEntities(metadata.openGraph.description);
 
   return {
-    title: metadata.title || "4 de Junio",
+    title: decodedTitle,
     description: metadata.description,
     canonical: metadata.canonicalUrl,
     openGraph: {
-      title: metadata.openGraph?.title,
-      description: metadata.openGraph?.description,
+      title: decodedTitle,
+      description: decodedDescription,
       images: [{ url: metadata.openGraph?.image?.secureUrl }],
       url: metadata.openGraph?.url,
       site_name: metadata.openGraph?.siteName,
