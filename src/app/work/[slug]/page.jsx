@@ -4,8 +4,6 @@ import Footer from "@/components/footer";
 import { getProjectAndMoreProjects, getAllProjectsWithSlug } from "@/lib/api";
 import { format } from "date-fns";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -19,7 +17,6 @@ export async function generateMetadata({ params }) {
   }
 
   const { seo } = data.project;
-  console.log(seo)
 
   return {
     title: seo.title,
@@ -33,52 +30,97 @@ export default async function Project({ params }) {
   const { project } = data;
   const formattedDate = format(new Date(project.date), "dd.MM.yyyy");
 
-
-  // console.log(project)
-
-
   return (
     <Layout>
-    <Navbar />
-    <div className="post-content mx-auto px-6 pb-8 lg:px-8">
-      <div className="relative isolate pt-14">
-        <div className="py-12 sm:py-18 lg:pb-40">
-          <div className="mx-auto max-w-screen-md px-4">
-            <div className="text-left">
-              <h1 className="text-3xl font-semibold">{project.title}</h1>
-              <div className="flex gap-4 mt-4">
-                {/* <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
-                  {project.categories.edges[0]?.node?.name || "No Category"}
-                </span> */}
-                <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
-                  {formattedDate}
-                </span>
-              </div>
-              <div className="mt-8">
-                {project.projectsContent?.projectPicture.node?.sourceUrl && (
-                  <Image
-                    src={project.projectsContent?.projectPicture.node?.sourceUrl}
-                    alt={project.title}
-                    width={1920}
-                    height={1080}
-                    className="rounded-lg aspect-video object-cover"
-                  />
-                )}
-              </div>
-              {/* <div className="mt-8">
-                <div
-                  className="prose lg:prose-xl mx-auto"
-                  dangerouslySetInnerHTML={{ __html: project.content }}
-                />
-              </div> */}
+      <Navbar />
+      <div className="mx-auto px-6 pb-8 lg:px-8">
+        <div
+          id="featuredImage"
+          className="mx-auto flow-root object-contain relative"
+        >
+          {project.projectsContent?.projectPicture.node?.sourceUrl && (
+            <div className="relative aspect-square md:aspect-video">
+              <Image
+                src={project.projectsContent?.projectPicture.node?.sourceUrl}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
             </div>
+          )}
+        </div>
+        <div id="projectContent" className="mx-auto text-left">
+          <div id="projectTitle" className="mt-6">
+            <h1 className="text-lg font-medium">
+              {project.projectsContent.projectTitle}
+            </h1>
+          </div>
+          <div id="projectClaim">
+            <h2 className="text-3xl md:text-5xl font-medium">
+              Paella Auténtica es una pasada. Me flipa.
+            </h2>
+          </div>
+          <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
+            <p className="text-lg my-12">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged. It was popularised
+              in the 1960s with the release of Letraset sheets containing Lorem
+              Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <h2 className="text-2xl md:text-4xl font-medium my-12">
+              Hola Pau, esto es una prueba.
+            </h2>
+          </div>
+          <div id="twoPictures" className="flex flex-col gap-4 md:flex-row">
+            <div id="firstPicture" className="aspect-auto object-cover">
+              <Image
+                src={project.projectsContent?.projectPicture.node?.sourceUrl}
+                alt={project.title}
+                width={1080}
+                height={1080}
+                className="rounded-lg"
+              />
+            </div>
+
+            <div id="secondPicture" className="h-64 object-cover">
+              <Image
+                src={project.projectsContent?.projectPicture.node?.sourceUrl}
+                alt={project.title}
+                width={1080}
+                height={1080}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+          <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
+            <p className="text-lg">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged. It was popularised
+              in the 1960s with the release of Letraset sheets containing Lorem
+              Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+          <div id="projectClaim">
+            <h2 className="text-center text-3xl md:text-5xl font-medium">
+              Paella Auténtica es una pasada. Me flipa.
+            </h2>
           </div>
         </div>
       </div>
-    </div>
-    <Footer />
-  </Layout>
-);
+      <Footer />
+    </Layout>
+  );
 }
 
 export async function generateStaticParams() {
