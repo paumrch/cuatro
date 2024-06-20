@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getProjectsData } from "../lib/api";
 
 export default async function Projects({ preview }) {
@@ -17,23 +18,32 @@ export default async function Projects({ preview }) {
               <h2 className="mt-4 text-3xl">Work</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-24">
-              {projectsData.projects.edges.map(({ node }) => {
-                const { projectTitle, projectCategory, projectPicture } =
-                  node.projectsContent;
+              {projectsData.projects.edges.map(({ node: project }) => {
                 return (
-                  <div className="w-full" key={projectTitle}>
-                    <div className="aspect-video bg-stone-900 rounded-lg overflow-hidden">
-                      <Image
-                        src={projectPicture.node.sourceUrl}
-                        alt={projectTitle}
-                        width={1920}
-                        height={1080}
-                        className="rounded-lg"
-                      />
-                    </div>
+                  <div className="w-full" key={project.slug}>
+                    <Link href={`/work/${project.slug}`}>
+                      <div className="aspect-video bg-stone-900 rounded-lg overflow-hidden">
+                        <Image
+                          src={
+                            project.projectsContent.projectPicture.node
+                              .sourceUrl
+                          }
+                          alt={project.projectsContent.projectTitle}
+                          width={1920}
+                          height={1080}
+                          className="rounded-lg"
+                        />
+                      </div>
+                    </Link>
                     <div className="flex justify-between mt-6 text-2xl">
-                      <h3 className="">{projectTitle}</h3>
-                      <p className="text-stone-600 text-lg">{projectCategory}</p>
+                      <Link href={`/work/${project.slug}`}>
+                        <h3 className="">
+                          {project.projectsContent.projectTitle}
+                        </h3>
+                      </Link>
+                      <p className="text-stone-600 text-lg">
+                        {project.projectsContent.projectCategory}
+                      </p>
                     </div>
                   </div>
                 );

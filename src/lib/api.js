@@ -336,14 +336,26 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     fragment ProjectFields on Project {
       title
       slug
+      date
+      dateGmt
     }
     query ProjectBySlug($id: ID!, $idType: ProjectIdType!) {
       project(id: $id, idType: $idType) {
+      date
       title
-      seo {
-        title
+       seo {
+       title
+       }
+    projectsContent {
+      projectCategory
+      projectPicture {
+        node {
+          sourceUrl
         }
       }
+      projectTitle
+    }
+  }
       projects(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
