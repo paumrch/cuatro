@@ -18,12 +18,11 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const { seo } = data;
+  const { seo } = data.project;
+  console.log(seo)
 
   return {
-    title: data.title,
-    description: data.description,
-    canonical: data.canonicalUrl,
+    title: seo.title,
   };
 }
 
@@ -35,7 +34,7 @@ export default async function Project({ params }) {
   const formattedDate = format(new Date(project.date), "dd.MM.yyyy");
 
 
-  console.log(project)
+  // console.log(project)
 
 
   return (
