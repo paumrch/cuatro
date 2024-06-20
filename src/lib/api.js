@@ -353,7 +353,22 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
           sourceUrl
         }
       }
+        projectPicture1 {
+        node {
+          sourceUrl
+        }
+      }
+        projectPicture2 {
+        node {
+          sourceUrl
+        }
+      }
       projectTitle
+      parrafo1
+      parrafo2
+      titularprincipal
+      subtitular2
+      subtitular1
     }
   }
       projects(first: 3, where: { orderby: { field: DATE, order: DESC } }) {

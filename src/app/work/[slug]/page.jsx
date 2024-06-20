@@ -50,7 +50,7 @@ export default async function Project({ params }) {
             </div>
           )}
         </div>
-        <div id="projectContent" className="mx-auto text-left">
+        <div id="projectContent" className="mx-auto">
           <div id="projectTitle" className="mt-6">
             <h1 className="text-lg font-medium">
               {project.projectsContent.projectTitle}
@@ -58,62 +58,43 @@ export default async function Project({ params }) {
           </div>
           <div id="projectClaim">
             <h2 className="text-3xl md:text-5xl font-medium">
-              Paella Auténtica es una pasada. Me flipa.
+              {project.projectsContent.titularprincipal}
             </h2>
           </div>
           <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
-            <p className="text-lg my-12">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchanged. It was popularised
-              in the 1960s with the release of Letraset sheets containing Lorem
-              Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            <p className="text-lg my-12">{project.projectsContent.parrafo1}</p>
             <h2 className="text-2xl md:text-4xl font-medium my-12">
-              Hola Pau, esto es una prueba.
+              {project.projectsContent.subtitular1}
             </h2>
           </div>
-          <div id="twoPictures" className="flex flex-col gap-4 md:flex-row">
-            <div id="firstPicture" className="aspect-auto object-cover">
+          <div
+            id="twoPictures"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <div id="firstPicture" className="relative w-full h-96">
               <Image
-                src={project.projectsContent?.projectPicture.node?.sourceUrl}
+                src={project.projectsContent?.projectPicture1?.node?.sourceUrl}
                 alt={project.title}
-                width={1080}
-                height={1080}
-                className="rounded-lg"
+                layout="fill"
+                className="rounded-lg object-cover"
               />
             </div>
-
-            <div id="secondPicture" className="h-64 object-cover">
+            <div id="secondPicture" className="relative w-full h-96">
               <Image
-                src={project.projectsContent?.projectPicture.node?.sourceUrl}
+                src={project.projectsContent?.projectPicture2?.node?.sourceUrl}
                 alt={project.title}
-                width={1080}
-                height={1080}
-                className="rounded-lg"
+                layout="fill"
+                className="rounded-lg object-cover"
               />
             </div>
           </div>
+
           <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
-            <p className="text-lg">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchanged. It was popularised
-              in the 1960s with the release of Letraset sheets containing Lorem
-              Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            <p className="text-lg">{project.projectsContent.parrafo2}</p>
           </div>
           <div id="projectClaim">
-            <h2 className="text-center text-3xl md:text-5xl font-medium">
-              Paella Auténtica es una pasada. Me flipa.
+            <h2 className="text-center text-2xl md:text-3xl font-medium">
+              {project.projectsContent.subtitular2}
             </h2>
           </div>
         </div>
