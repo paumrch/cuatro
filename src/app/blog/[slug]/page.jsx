@@ -8,7 +8,6 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// Implementing generateMetadata function
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const data = await getPostAndMorePosts(slug);
@@ -23,15 +22,14 @@ export async function generateMetadata({ params }) {
   const { seo } = data.post;
 
   return {
-    title: seo.title || "Post Title",
-    description: seo.description || "Post Description",
-    canonical: seo.canonicalUrl || "https://yourwebsite.com",
+    title: seo.title,
+    description: seo.description,
+    canonical: seo.canonicalUrl,
     openGraph: {
       title: seo.title,
       description: seo.description,
       images: [{ url: data.post.featuredImage?.node?.sourceUrl }],
       url: seo.canonicalUrl,
-      site_name: "Your Website",
     },
     twitter: {
       card: "summary_large_image",
