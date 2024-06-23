@@ -43,7 +43,7 @@ export default async function sitemap() {
 
     return urls;
   } catch (error) {
-    console.error("Error generating sitemap:", error);
+    console.error("Error generating sitemap::", error);
     return [];
   }
 }
