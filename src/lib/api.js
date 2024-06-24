@@ -17,6 +17,7 @@ async function fetchAPI(query = "", { variables } = {}) {
       query,
       variables,
     }),
+    next: { revalidate },
   });
 
   const json = await res.json();
@@ -26,6 +27,8 @@ async function fetchAPI(query = "", { variables } = {}) {
   }
   return json.data;
 }
+
+export const revalidate = 3600;
 
 export async function getAllPostsFromWordPress(preview) {
   const data = await fetchAPI(`
