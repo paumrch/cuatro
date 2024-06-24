@@ -57,11 +57,11 @@ export default async function Project({ params }) {
             </h1>
           </div>
           <div id="projectClaim">
-            <h2 className="text-3xl md:text-5xl font-medium">
+            <h2 className="my-4 text-3xl md:text-5xl font-medium">
               {project.projectsContent.titularprincipal}
             </h2>
           </div>
-          <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
+          <div id="projectInfo" className="my-12 md:mx-48 lg:mx-64 xl:mx-96">
             <p className="text-lg my-12">{project.projectsContent.parrafo1}</p>
             <h2 className="text-2xl md:text-4xl font-medium my-12">
               {project.projectsContent.subtitular1}
@@ -89,7 +89,7 @@ export default async function Project({ params }) {
             </div>
           </div>
 
-          <div id="projectInfo" className="my-24 md:mx-48 lg:mx-64 xl:mx-96">
+          <div id="projectInfo" className="my-12 md:mx-48 lg:mx-64 xl:mx-96">
             <p className="text-lg">{project.projectsContent.parrafo2}</p>
           </div>
           <div id="projectClaim">

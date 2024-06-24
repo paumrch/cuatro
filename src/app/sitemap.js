@@ -27,7 +27,7 @@ export default async function sitemap() {
         url: `${SITE_URL}/work/${slug}`,
         lastModified: new Date(),
         changeFrequency: "daily",
-        priority: 0.8,
+        priority: 1,
       };
     }).filter(project => project !== null);
 
