@@ -77,23 +77,41 @@ export default function Footer() {
 
   return (
     <footer className="" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-
-      <div className="mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <Link href="https://calendar.app.google/12L5HW9PUfJbCfrL8" target="_blank">
-        <div
-          type="button"
-          className="flex w-48 rounded-md bg-stone-100 px-6 py-2.5 text-sm justify-center text-stone-900 shadow-sm hover:bg-stone-300 hover:text-stone-900 items-center transition duration-300 ease-in-out"
+      <div className="mx-auto px-6 pb-8 lg:px-8">
+        <div className="relative isolate border-t border-stone-900/10">
+          <div
+            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true"
+          ></div>
+          <div className="py-8 sm:py-12 lg:pb-12">
+            <div className="mx-auto">
+              <div className="flex flex-col md:flex-row mt-8 gap-6 md:justify-between">
+                <div className="text-left w-full sm:w-1/2">
+                  <h2 className="text-3xl">Cuéntanos más sobre tu proyecto.</h2>
+                </div>
+                {/* Aquí lo de la derecha */}
+                <div id="Office" className="flex flex-col gap-0">
+                  <h2 className="text-base mt-4">¿Dónde estamos?</h2>
+                  <p className="text-stone-500">Pasaje Dr. Bartual Moret 8 - 6</p>
+                  <p className="text-stone-500">46010, Valencia</p>
+                  <h2 className="text-base mt-4">Email</h2>
+                  <p className="text-stone-500">hola@4dejunio.com</p>
+                </div>
+              </div>
+              <div id="Meet" className="my-8">
+        <Link
+          href="https://calendar.app.google/12L5HW9PUfJbCfrL8"
+          target="_blank"
         >
-          <div className="h-2 w-2 bg-emerald-500 rounded-full"></div>
-          <span className="mx-2">¿Nos reunimos?</span>
-        </div>
+          <div
+            type="button"
+            className="flex w-48 rounded-md bg-stone-100 px-6 py-2.5 text-sm justify-center text-stone-900 shadow-sm hover:bg-stone-300 hover:text-stone-900 items-center transition duration-300 ease-in-out"
+          >
+            <div className="h-2 w-2 bg-emerald-500 rounded-full"></div>
+            <span className="mx-2">¿Nos reunimos?</span>
+          </div>
         </Link>
-        
         {/* Here comes Subscribe */}
-
         <div className="mt-8 border-t border-stone-900/10 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
@@ -111,6 +129,10 @@ export default function Footer() {
           <p className="mt-8 text-xs leading-5 text-stone-500 md:order-1 md:mt-0">
             4 de Junio &copy; {currentYear}. Todos los derechos reservados.
           </p>
+        </div>
+      </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
