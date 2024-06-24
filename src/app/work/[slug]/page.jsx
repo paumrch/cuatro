@@ -2,7 +2,6 @@ import Layout from "@/app/layout";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { getProjectAndMoreProjects, getAllProjectsWithSlug } from "@/lib/api";
-import { format } from "date-fns";
 import Image from "next/image";
 
 export async function generateMetadata({ params }) {
@@ -28,7 +27,6 @@ export default async function Project({ params }) {
   const data = await getProjectAndMoreProjects(slug);
 
   const { project } = data;
-  const formattedDate = format(new Date(project.date), "dd.MM.yyyy");
 
   return (
     <Layout>
