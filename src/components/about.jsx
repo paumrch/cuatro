@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export default function About() {
@@ -25,7 +26,7 @@ export default function About() {
                   únicas para los clientes más especiales.
                 </p>
                 <p className="text-lg mt-4 hover:underline">
-                  <a
+                  <Link
                     href="https://linkedin.com/company/4dejunio/"
                     className="flex items-center group"
                     target="_blank"
@@ -35,8 +36,81 @@ export default function About() {
                     <span className="relative overflow-hidden">
                       <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
                     </span>
-                  </a>
+                  </Link>
                 </p>
+                <div id="team" className="my-8">
+                  <h3 className="text-2xl my-6">Team</h3>
+                  <div className="flex flex-col gap-4 md:grid md:grid-cols-2 text-justify">
+                    <div id="Pau" className="leading-6">
+                      <h4 className="text-lg">Pau March</h4>
+                      <span className="text-sm text-stone-500">
+                        Partner & Creative Director
+                      </span>
+                      <p className="mt-4 leading-6 text-base">
+                        Director creativo con más de 5 años de experiencia
+                        trabajando con clientes de diferentes lugares de España
+                        y Europa. Con amplios conocimientos en desarrollo web y
+                        estrategia digital para marcas, la visión estratégica y
+                        el diseño detallado de Pau han ayudado a transformar
+                        negocios e instituciones.
+                        <br />
+                        <br />
+                        Ha liderado equipos, comprendiendo profundamente las
+                        necesidades de los clientes y elevando sus proyectos. Su
+                        capacidad para planificar, diseñar e implementar
+                        soluciones digitales ha resultado un exitosa para marcas
+                        y clientes.
+                      </p>
+                      <p className="text-base mt-4 hover:underline text-stone-500">
+                        <Link
+                          href="https://linkedin.com/company/4dejunio/"
+                          className="flex items-center group"
+                          target="_blank"
+                        >
+                          <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
+                          LinkedIn
+                          <span className="relative overflow-hidden">
+                            <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                          </span>
+                        </Link>
+                      </p>
+                    </div>
+                    <div id="Vir" className="leading-6">
+                      <h4 className="text-lg">Virginia FIta</h4>
+                      <span className="text-sm text-stone-500">
+                        Partner & Socialmedia
+                      </span>
+                      <p className="mt-4 leading-6 text-base">
+                        Director creativo con más de 5 años de experiencia
+                        trabajando con clientes de diferentes lugares de España
+                        y Europa. Con amplios conocimientos en desarrollo web y
+                        estrategia digital para marcas, la visión estratégica y
+                        el diseño detallado de Pau han ayudado a transformar
+                        negocios e instituciones.
+                        <br />
+                        <br />
+                        Ha liderado equipos, comprendiendo profundamente las
+                        necesidades de los clientes y elevando sus proyectos. Su
+                        capacidad para planificar, diseñar e implementar
+                        soluciones digitales ha resultado un exitosa para marcas
+                        y clientes.
+                      </p>
+                      <p className="text-base mt-4 hover:underline text-stone-500">
+                        <Link
+                          href="https://linkedin.com/company/4dejunio/"
+                          className="flex items-center group"
+                          target="_blank"
+                        >
+                          <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
+                          LinkedIn
+                          <span className="relative overflow-hidden">
+                            <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+                          </span>
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
