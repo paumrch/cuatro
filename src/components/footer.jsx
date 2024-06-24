@@ -1,7 +1,7 @@
 import Meeting from "@/components/meeting";
+import Copyright from "@/components/copyright";
 
 export default function Footer() {
-
   return (
     <footer className="" aria-labelledby="footer-heading">
       <div className="mx-auto px-6 lg:px-8">
@@ -15,6 +15,7 @@ export default function Footer() {
               <div className="flex flex-col md:flex-row mt-8 gap-6 md:justify-between">
                 <div className="text-left w-full sm:w-1/2">
                   <h2 className="text-3xl">Cuéntanos más sobre tu proyecto.</h2>
+                  <Meeting />
                 </div>
                 <div id="Office" className="flex flex-col gap-0">
                   <h2 className="text-base mt-4">¿Dónde estamos?</h2>
@@ -26,10 +27,10 @@ export default function Footer() {
                   <p className="text-stone-500">hola@4dejunio.com</p>
                 </div>
               </div>
-             <Meeting />
             </div>
           </div>
         </div>
+      <Copyright />
       </div>
     </footer>
   );
