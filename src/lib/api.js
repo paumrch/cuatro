@@ -27,7 +27,6 @@ async function fetchAPI(query = "", { variables } = {}) {
   return json.data;
 }
 
-// Get the first 20 posts from WordPress, ordered by the date
 export async function getAllPostsFromWordPress(preview) {
   const data = await fetchAPI(`
   query Posts {
@@ -308,7 +307,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   export async function getAllProjectsWithSlug() {
     const data = await fetchAPI(`
       query getAllProjectsWithSlug {
-        projects(first: 10000) {
+        projects(first: 100) {
           edges {
             node {
               slug
