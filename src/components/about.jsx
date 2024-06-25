@@ -46,7 +46,7 @@ export default function About() {
                       <span className="text-sm text-stone-500">
                         Partner & Creative Director
                       </span>
-                      <p className="mt-4 leading-6 text-base">
+                      {/* <p className="mt-4 leading-6 text-base">
                         Director creativo con más de 5 años de experiencia
                         trabajando con clientes de diferentes lugares de España
                         y Europa. Con amplios conocimientos en desarrollo web y
@@ -60,7 +60,7 @@ export default function About() {
                         capacidad para planificar, diseñar e implementar
                         soluciones digitales ha resultado un exitosa para marcas
                         y clientes.
-                      </p>
+                      </p> */}
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
                           href="https://linkedin.com/company/4dejunio/"
@@ -80,7 +80,7 @@ export default function About() {
                       <span className="text-sm text-stone-500">
                         Partner & Socialmedia
                       </span>
-                      <p className="mt-4 leading-6 text-base">
+                      {/* <p className="mt-4 leading-6 text-base">
                         Director creativo con más de 5 años de experiencia
                         trabajando con clientes de diferentes lugares de España
                         y Europa. Con amplios conocimientos en desarrollo web y
@@ -94,7 +94,7 @@ export default function About() {
                         capacidad para planificar, diseñar e implementar
                         soluciones digitales ha resultado un exitosa para marcas
                         y clientes.
-                      </p>
+                      </p> */}
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
                           href="https://linkedin.com/company/4dejunio/"

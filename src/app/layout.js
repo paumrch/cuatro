@@ -2,7 +2,8 @@ import Head from "next/head";
 import "./globals.css";
 import localFont from "next/font/local";
 import SmoothScrolling from "../components/smoothScrolling";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Transition from "@/components/transition";
 
 const myFont = localFont({
   src: [
@@ -74,7 +75,9 @@ export default function RootLayout({ children, metadata = {} }) {
         <link rel="canonical" href={metadata?.canonicalUrl} />
       </Head>
       <body className="text-stone-900 bg-stone-50">
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          <Transition>{children}</Transition>
+        </SmoothScrolling>
         <Analytics />
       </body>
     </html>

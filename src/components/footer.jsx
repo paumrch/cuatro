@@ -20,9 +20,9 @@ export default function Footer() {
                 <div id="Office" className="flex flex-col gap-0">
                   <h2 className="text-base mt-4">¿Dónde estamos?</h2>
                   <p className="text-stone-500">
-                    Pasaje Dr. Bartual Moret 8 - 6
+                    Pasaje Dr. Bartual Moret 8 - 6.
                   </p>
-                  <p className="text-stone-500">46010, Valencia</p>
+                  <p className="text-stone-500">46010, Valencia.</p>
                   <h2 className="text-base mt-4">Email</h2>
                   <p className="text-stone-500">hola@4dejunio.com</p>
                 </div>
