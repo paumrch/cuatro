@@ -63,7 +63,7 @@ export default function About() {
                       </p> */}
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
-                          href="https://linkedin.com/company/4dejunio/"
+                          href="https://www.linkedin.com/in/paumrch/"
                           className="flex items-center group"
                           target="_blank"
                         >
@@ -97,7 +97,7 @@ export default function About() {
                       </p> */}
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
-                          href="https://linkedin.com/company/4dejunio/"
+                          href="https://www.linkedin.com/in/virginiafita/"
                           className="flex items-center group"
                           target="_blank"
                         >
