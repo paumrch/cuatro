@@ -46,21 +46,17 @@ export default function About() {
                       <span className="text-sm text-stone-500">
                         Partner & Creative Director
                       </span>
-                      {/* <p className="mt-4 leading-6 text-base">
-                        Director creativo con más de 5 años de experiencia
-                        trabajando con clientes de diferentes lugares de España
-                        y Europa. Con amplios conocimientos en desarrollo web y
-                        estrategia digital para marcas, la visión estratégica y
-                        el diseño detallado de Pau han ayudado a transformar
-                        negocios e instituciones.
+                      <p className="mt-4 leading-6 text-base">
+                        Creativo con más de 5 años de experiencia. Con amplios
+                        conocimientos en desarrollo web y estrategia digital
+                        para marcas. Visión y diseño de soluciones presentes en
+                        empresas e instituciones, en España y Europa.
                         <br />
                         <br />
-                        Ha liderado equipos, comprendiendo profundamente las
-                        necesidades de los clientes y elevando sus proyectos. Su
-                        capacidad para planificar, diseñar e implementar
-                        soluciones digitales ha resultado un exitosa para marcas
-                        y clientes.
-                      </p> */}
+                        La mirada estratégica de la agencia y el compañero de
+                        Vir para que los proyectos sean tan buenos como los
+                        clientes merecen.
+                      </p>
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
                           href="https://www.linkedin.com/in/paumrch/"
@@ -80,21 +76,17 @@ export default function About() {
                       <span className="text-sm text-stone-500">
                         Partner & Socialmedia
                       </span>
-                      {/* <p className="mt-4 leading-6 text-base">
-                        Director creativo con más de 5 años de experiencia
-                        trabajando con clientes de diferentes lugares de España
-                        y Europa. Con amplios conocimientos en desarrollo web y
-                        estrategia digital para marcas, la visión estratégica y
-                        el diseño detallado de Pau han ayudado a transformar
-                        negocios e instituciones.
+                      <p className="mt-4 leading-6 text-base">
+                        La otra mitad de 4 de Junio. Con amplia experiencia en
+                        el sector audiovisual, en los campos de producción,
+                        dirección y fotografía. Especializada en Social Media y
+                        Content Creation (@virguerias en Tik Tok).
                         <br />
                         <br />
-                        Ha liderado equipos, comprendiendo profundamente las
-                        necesidades de los clientes y elevando sus proyectos. Su
-                        capacidad para planificar, diseñar e implementar
-                        soluciones digitales ha resultado un exitosa para marcas
-                        y clientes.
-                      </p> */}
+                        Responsable del día a día de la agencia, de dar sabor a
+                        las ideas que salgan a la luz con el toque fresco y
+                        particular de 4 de Junio.
+                      </p>
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
                           href="https://www.linkedin.com/in/virginiafita/"
