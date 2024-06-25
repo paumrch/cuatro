@@ -72,7 +72,7 @@ export default function About() {
                       </p>
                     </div>
                     <div id="Vir" className="leading-6">
-                      <h4 className="text-lg">Virginia FIta</h4>
+                      <h4 className="text-lg">Virginia Fita</h4>
                       <span className="text-sm text-stone-500">
                         Partner & Socialmedia
                       </span>
