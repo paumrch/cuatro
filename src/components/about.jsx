@@ -32,7 +32,7 @@ export default function About() {
                     target="_blank"
                   >
                     <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
-                    Conócenos en LinkedIn
+                    Echa un vistazo en LinkedIn
                     <span className="relative overflow-hidden">
                       <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
                     </span>
@@ -60,36 +60,6 @@ export default function About() {
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
                           href="https://www.linkedin.com/in/paumrch/"
-                          className="flex items-center group"
-                          target="_blank"
-                        >
-                          <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
-                          LinkedIn
-                          <span className="relative overflow-hidden">
-                            <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-                          </span>
-                        </Link>
-                      </p>
-                    </div>
-                    <div id="Vir" className="leading-6">
-                      <h4 className="text-lg">Virginia Fita</h4>
-                      <span className="text-sm text-stone-500">
-                        Partner & Socialmedia
-                      </span>
-                      <p className="mt-4 leading-6 text-base">
-                        La otra mitad de 4 de Junio. Con amplia experiencia en
-                        el sector audiovisual, en los campos de producción,
-                        dirección y fotografía. Especializada en Social Media y
-                        Content Creation (@virguerias en Tik Tok).
-                        <br />
-                        <br />
-                        Responsable del día a día de la agencia, de dar sabor a
-                        las ideas que salgan a la luz con el toque fresco y
-                        particular de 4 de Junio.
-                      </p>
-                      <p className="text-base mt-4 hover:underline text-stone-500">
-                        <Link
-                          href="https://www.linkedin.com/in/virginiafita/"
                           className="flex items-center group"
                           target="_blank"
                         >
