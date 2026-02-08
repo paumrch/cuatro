@@ -1,4 +1,5 @@
 import { getAllPostsWithSlug, getAllProjectsWithSlug } from "../lib/api";
+import { getAllServiceUrls } from "../lib/pseo-data";
 
 export default async function sitemap() {
   const SITE_URL = "https://4dejunio.com";
@@ -59,7 +60,15 @@ export default async function sitemap() {
       },
     ];
 
-    const urls = [...staticPages, ...projects, ...posts];
+    // Páginas programáticas de servicios
+    const servicePages = getAllServiceUrls().map(({ url, priority }) => ({
+      url,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority,
+    }));
+
+    const urls = [...staticPages, ...projects, ...posts, ...servicePages];
 
     return urls;
   } catch (error) {
