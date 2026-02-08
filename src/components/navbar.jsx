@@ -31,8 +31,8 @@ export default function Navbar() {
           <span className="sr-only">4 de Junio</span>
           <Image
             className="h-4 w-auto"
-            src="http://wp.4dejunio.com/wp-content/uploads/2024/04/4dejunio_nuevo_negro.svg"
-            alt=""
+            src="https://wp.4dejunio.com/wp-content/uploads/2024/04/4dejunio_nuevo_negro.svg"
+            alt="4 de Junio - Agencia Creativa"
             width={100}
             height={100}
           />

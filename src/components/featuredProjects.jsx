@@ -15,7 +15,7 @@ export default async function Projects({ preview }) {
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
             <div className="mx-auto text-left">
-              <h2 className="mt-4 text-3xl">Work</h2>
+              <h2 className="mt-4 text-3xl">Proyectos</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-24">
               {projectsData.projects.edges.map(({ node: project }) => {

@@ -16,9 +16,10 @@ export default async function Hero({ preview }) {
         <div className="py-24 sm:py-32 lg:pb-40">
           <div className="mx-auto">
             <div className="mx-auto text-left">
-              <p className="mt-6 text-2xl">
+              <h1 className="mt-6 text-2xl">
                 <span className="font-medium">{homeHeading}</span>
-                <br />
+              </h1>
+              <p className="mt-2 text-2xl text-stone-600">
                 {homeSubheading}
               </p>
             </div>

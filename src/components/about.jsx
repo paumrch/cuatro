@@ -14,16 +14,16 @@ export default function About() {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">About</h2>
+                <h2 className="text-3xl">Nosotros</h2>
               </div>
               <div
                 id="IdentidadContent"
                 className="w-full sm:w-1/2 text-stone-600 text-lg md:text-xl"
               >
                 <p>
-                  Mentes abiertas, creativas y tecnológicas para desarrollar
-                  proyectos digitales de primer nivel y narrativas de marca
-                  únicas para los clientes más especiales.
+                  Mentes creativas y tecnológicas trabajando juntas para
+                  desarrollar proyectos digitales de primer nivel y narrativas
+                  de marca que conectan con las personas adecuadas.
                 </p>
                 <p className="text-lg mt-4 hover:underline">
                   <Link
@@ -39,23 +39,23 @@ export default function About() {
                   </Link>
                 </p>
                 <div id="team" className="my-8">
-                  <h3 className="text-2xl my-6">Team</h3>
-                  <div className="flex flex-col gap-4 md:grid md:grid-cols-2 text-justify">
+                  <h3 className="text-2xl my-6">Equipo</h3>
+                  <div className="flex flex-col gap-4 max-w-lg">
                     <div id="Pau" className="leading-6">
                       <h4 className="text-lg">Pau March</h4>
                       <span className="text-sm text-stone-500">
-                        Partner & Creative Director
+                        Founder & Creative Director
                       </span>
                       <p className="mt-4 leading-6 text-base">
-                        Creativo con más de 5 años de experiencia. Con amplios
-                        conocimientos en desarrollo web y estrategia digital
-                        para marcas. Visión y diseño de soluciones presentes en
-                        empresas e instituciones, en España y Europa.
+                        Creativo con más de 5 años de experiencia en desarrollo
+                        web y estrategia digital para marcas. Visión y diseño de
+                        soluciones presentes en empresas e instituciones, en
+                        España y Europa.
                         <br />
                         <br />
-                        La mirada estratégica de la agencia y el compañero de
-                        Vir para que los proyectos sean tan buenos como los
-                        clientes merecen.
+                        La mirada estratégica de la agencia. Cada proyecto es una
+                        oportunidad de crear algo que funcione tan bien como se
+                        ve.
                       </p>
                       <p className="text-base mt-4 hover:underline text-stone-500">
                         <Link
@@ -77,11 +77,12 @@ export default function About() {
             </div>
 
             <div className="mt-12 sm:mt-24">
+              <h3 className="text-xl text-stone-600 mb-6">Marcas que confían en nosotros</h3>
               <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/KomeBlack.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/KomeBlack.svg"
                       alt="KOME"
                       width={120}
                       height={90}
@@ -91,7 +92,7 @@ export default function About() {
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/Techne-Black.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/Techne-Black.svg"
                       alt="Techné 183"
                       width={120}
                       height={90}
@@ -101,7 +102,7 @@ export default function About() {
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/G2-Care-Black.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/G2-Care-Black.svg"
                       alt="G2 Care"
                       width={120}
                       height={90}
@@ -111,7 +112,7 @@ export default function About() {
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/DraIsabelCamps-Black.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/DraIsabelCamps-Black.svg"
                       alt="Dra. Isabel Camps"
                       width={150}
                       height={90}
@@ -121,7 +122,7 @@ export default function About() {
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/MaverickBlack.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/MaverickBlack.svg"
                       alt="MAVERICK"
                       width={100}
                       height={90}
@@ -131,7 +132,7 @@ export default function About() {
                 <li>
                   <div className="bg-stone-200 p-8 rounded-lg flex items-center h-32 justify-center">
                     <Image
-                      src="http://wp.4dejunio.com/wp-content/uploads/2024/05/LuzzioBlack.svg"
+                      src="https://wp.4dejunio.com/wp-content/uploads/2024/05/LuzzioBlack.svg"
                       alt="Luzzio"
                       width={100}
                       height={90}

@@ -84,6 +84,47 @@ export async function getAllPostsWithSlug() {
   return data?.posts;
 }
 
+export async function getAllPublishedPosts() {
+  const data = await fetchAPI(`
+    query AllPublishedPosts {
+      posts(first: 100) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            author {
+              node {
+                name
+                firstName
+                lastName
+              }
+            }
+            seo {
+              title
+              description
+            }
+          }
+        }
+      }
+    }
+  `);
+  return data?.posts;
+}
+
 export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
@@ -343,10 +384,13 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     }
     query ProjectBySlug($id: ID!, $idType: ProjectIdType!) {
       project(id: $id, idType: $idType) {
+      slug
       date
       title
        seo {
        title
+       description
+       canonicalUrl
        }
     projectsContent {
       projectCategory

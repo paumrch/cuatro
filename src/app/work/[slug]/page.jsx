@@ -1,24 +1,44 @@
-import Layout from "@/app/layout";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { getProjectAndMoreProjects, getAllProjectsWithSlug } from "@/lib/api";
+import { notFound } from "next/navigation";
 import Image from "next/image";
+import JsonLd, { getCreativeWorkJsonLd, getBreadcrumbJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const data = await getProjectAndMoreProjects(slug);
 
-  if (!data) {
+  if (!data?.project) {
     return {
-      title: "Project Not Found",
-      description: "The project you are looking for does not exist.",
+      title: "Proyecto no encontrado",
+      description: "El proyecto que buscas no existe.",
     };
   }
 
   const { seo } = data.project;
+  const { project } = data;
 
   return {
     title: seo.title,
+    description: seo.description || `Proyecto ${project.projectsContent?.projectTitle} — Branding, diseño y desarrollo por 4 de Junio.`,
+    alternates: {
+      canonical: `https://4dejunio.com/work/${slug}`,
+    },
+    openGraph: {
+      title: seo.title,
+      description: seo.description || `Descubre el proyecto ${project.projectsContent?.projectTitle} desarrollado por 4 de Junio.`,
+      images: project.projectsContent?.projectPicture?.node?.sourceUrl
+        ? [{ url: project.projectsContent.projectPicture.node.sourceUrl }]
+        : [],
+      url: `https://4dejunio.com/work/${slug}`,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description || `Proyecto ${project.projectsContent?.projectTitle} por 4 de Junio.`,
+    },
   };
 }
 
@@ -26,10 +46,30 @@ export default async function Project({ params }) {
   const { slug } = params;
   const data = await getProjectAndMoreProjects(slug);
 
+  if (!data?.project) {
+    notFound();
+  }
+
   const { project } = data;
 
   return (
-    <Layout>
+    <>
+      <JsonLd
+        data={getCreativeWorkJsonLd({
+          title: project.projectsContent?.projectTitle || project.title,
+          description: project.projectsContent?.parrafo1 || `Proyecto de ${project.projectsContent?.projectCategory} por 4 de Junio`,
+          slug: slug,
+          image: project.projectsContent?.projectPicture?.node?.sourceUrl,
+          category: project.projectsContent?.projectCategory,
+        })}
+      />
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: "Inicio", url: "https://4dejunio.com" },
+          { name: "Proyectos", url: "https://4dejunio.com/work" },
+          { name: project.projectsContent?.projectTitle || project.title, url: `https://4dejunio.com/work/${slug}` },
+        ])}
+      />
       <Navbar />
       <div className="mx-auto px-6 pb-8 lg:px-8">
         <div
@@ -40,10 +80,12 @@ export default async function Project({ params }) {
             <div className="relative aspect-square md:aspect-video">
               <Image
                 src={project.projectsContent?.projectPicture.node?.sourceUrl}
-                alt={project.title}
-                layout="fill"
-                objectFit="cover"
+                alt={`Imagen principal del proyecto ${project.projectsContent?.projectTitle || project.title}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 100vw"
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
+                priority
               />
             </div>
           )}
@@ -72,16 +114,18 @@ export default async function Project({ params }) {
             <div id="firstPicture" className="relative w-full h-96">
               <Image
                 src={project.projectsContent?.projectPicture1?.node?.sourceUrl}
-                alt={project.title}
-                layout="fill"
+                alt={`Detalle del proyecto ${project.projectsContent?.projectTitle || project.title}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-lg object-cover"
               />
             </div>
             <div id="secondPicture" className="relative w-full h-96">
               <Image
                 src={project.projectsContent?.projectPicture2?.node?.sourceUrl}
-                alt={project.title}
-                layout="fill"
+                alt={`Detalle adicional del proyecto ${project.projectsContent?.projectTitle || project.title}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-lg object-cover"
               />
             </div>
@@ -98,15 +142,13 @@ export default async function Project({ params }) {
         </div>
       </div>
       <Footer />
-    </Layout>
+    </>
   );
 }
 
 export async function generateStaticParams() {
   const allProjects = await getAllProjectsWithSlug();
   return allProjects.edges.map(({ node }) => ({
-    params: {
-      slug: node.slug,
-    },
+    slug: node.slug,
   }));
 }

@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Bloquear rutas internas de Next.js
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://4dejunio.com/sitemap.xml

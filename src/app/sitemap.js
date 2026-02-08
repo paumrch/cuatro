@@ -31,15 +31,35 @@ export default async function sitemap() {
       };
     }).filter(project => project !== null);
 
-    // Agregar la URL de la página principal
-    const homePageUrl = {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    };
+    // Páginas estáticas
+    const staticPages = [
+      {
+        url: SITE_URL,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 1.0,
+      },
+      {
+        url: `${SITE_URL}/work`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      },
+      {
+        url: `${SITE_URL}/blog`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.9,
+      },
+      {
+        url: `${SITE_URL}/legal`,
+        lastModified: new Date(),
+        changeFrequency: "yearly",
+        priority: 0.3,
+      },
+    ];
 
-    const urls = [homePageUrl, ...posts, ...projects];
+    const urls = [...staticPages, ...projects, ...posts];
 
     return urls;
   } catch (error) {

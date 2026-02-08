@@ -1,4 +1,3 @@
-import Layout from "./layout";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
@@ -21,7 +20,9 @@ export async function generateMetadata() {
   return {
     title: decodedTitle,
     description: metadata.description,
-    canonical: metadata.canonicalUrl,
+    alternates: {
+      canonical: metadata.canonicalUrl || "https://4dejunio.com",
+    },
     openGraph: {
       title: decodedTitle,
       description: decodedDescription,
@@ -40,14 +41,14 @@ export async function generateMetadata() {
 
 export default function Index() {
   return (
-    <Layout>
+    <>
       <Navbar />
       <Hero />
       <FeaturedProjects />
       <Services />
       <About />
-      {/* <Blog /> */}
+      <Blog />
       <Footer />
-    </Layout>
+    </>
   );
 }

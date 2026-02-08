@@ -16,7 +16,7 @@ export default async function Blog({ preview }) {
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
             <div className="text-left w-full sm:w-1/2 mt-8">
-              <h2 className="text-3xl">Think Tank</h2>
+              <h2 className="text-3xl">Blog</h2>
             </div>
             <div className="sm:hidden flex overflow-x-auto my-8 no-scrollbar">
               <div className="flex flex-nowrap space-x-6">
@@ -24,18 +24,20 @@ export default async function Blog({ preview }) {
                   const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
                   return (
                     <div key={post.slug} className="flex-none w-64">
+                      {post.featuredImage?.node?.sourceUrl && (
+                        <Link href={`/blog/${post.slug}`}>
+                          <div className="aspect-square rounded-lg overflow-hidden">
+                            <Image
+                              src={post.featuredImage.node.sourceUrl}
+                              alt={post.title}
+                              width={1080}
+                              height={1080}
+                              className="rounded-lg object-cover w-full h-full"
+                            />
+                          </div>
+                        </Link>
+                      )}
                       <Link href={`/blog/${post.slug}`}>
-                        <div className="aspect-square rounded-lg overflow-hidden">
-                          <Image
-                            src={post.featuredImage.node.sourceUrl}
-                            alt={post.title}
-                            width={1080}
-                            height={1080}
-                            className="rounded-lg object-cover w-full h-full"
-                          />
-                        </div>
-                      </Link>
-                      <Link href={`/posts/${post.slug}`}>
                         <div>
                           <div className="flex my-4 gap-4 uppercase font-normal justify-between text-xs">
                             <span className="">{post.categories.edges[0].node.name}</span>
@@ -54,18 +56,20 @@ export default async function Blog({ preview }) {
                 const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
                 return (
                   <div key={post.slug} className="flex flex-col gap-4">
+                    {post.featuredImage?.node?.sourceUrl && (
+                      <Link href={`/blog/${post.slug}`}>
+                        <div className="aspect-square rounded-lg overflow-hidden">
+                          <Image
+                            src={post.featuredImage.node.sourceUrl}
+                            alt={post.title}
+                            width={1080}
+                            height={1080}
+                            className="rounded-lg object-cover w-full h-full"
+                          />
+                        </div>
+                      </Link>
+                    )}
                     <Link href={`/blog/${post.slug}`}>
-                      <div className="aspect-square rounded-lg overflow-hidden">
-                        <Image
-                          src={post.featuredImage.node.sourceUrl}
-                          alt={post.title}
-                          width={1080}
-                          height={1080}
-                          className="rounded-lg object-cover w-full h-full"
-                        />
-                      </div>
-                    </Link>
-                    <Link href={`/posts/${post.slug}`}>
                       <div className="">
                         <div className="flex mt-4 gap-4 text-sm uppercase font-normal justify-between no-scrollbar">
                           <span>{post.categories.edges[0].node.name}</span>

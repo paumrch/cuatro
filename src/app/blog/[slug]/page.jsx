@@ -1,12 +1,10 @@
-// pages/posts/[slug].jsx
-
-import Layout from "@/app/layout";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api";
 import { format } from "date-fns";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import JsonLd, { getArticleJsonLd, getBreadcrumbJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -24,7 +22,9 @@ export async function generateMetadata({ params }) {
   return {
     title: seo.title,
     description: seo.description,
-    canonical: seo.canonicalUrl,
+    alternates: {
+      canonical: `https://4dejunio.com/blog/${slug}`,
+    },
     openGraph: {
       title: seo.title,
       description: seo.description,
@@ -51,7 +51,24 @@ export default async function Post({ params }) {
   const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
 
   return (
-    <Layout>
+    <>
+      <JsonLd
+        data={getArticleJsonLd({
+          title: post.title,
+          description: post.seo?.description || post.excerpt,
+          slug: post.slug,
+          date: post.date,
+          image: post.featuredImage?.node?.sourceUrl,
+          author: post.author?.node?.name,
+        })}
+      />
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: "Inicio", url: "https://4dejunio.com" },
+          { name: "Blog", url: "https://4dejunio.com/blog" },
+          { name: post.title, url: `https://4dejunio.com/blog/${post.slug}` },
+        ])}
+      />
       <Navbar />
       <div className="post-content mx-auto px-6 pb-8 lg:px-8">
         <div className="relative isolate pt-14">
@@ -75,6 +92,7 @@ export default async function Post({ params }) {
                       width={1920}
                       height={1080}
                       className="rounded-lg aspect-video object-cover"
+                      priority
                     />
                   )}
                 </div>
@@ -90,7 +108,7 @@ export default async function Post({ params }) {
         </div>
       </div>
       <Footer />
-    </Layout>
+    </>
   );
 }
 

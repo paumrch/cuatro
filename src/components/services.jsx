@@ -13,21 +13,30 @@ export default async function Services({ preview }) {
           <div className="mx-auto">
             <div className="flex flex-col sm:flex-row mt-8 gap-6">
               <div className="text-left w-full sm:w-1/2">
-                <h2 className="text-3xl">Services</h2>
+                <h2 className="text-3xl">Servicios</h2>
               </div>
               <div id="Element" className="w-full sm:w-1/2 text-lg md:text-xl">
                 <p className="text-stone-600">
-                  Acompañamos tu proyecto desde su nacimiento y te ayudamos a desarrollarlo en la dirección adecueada.
+                  Acompañamos tu proyecto desde su nacimiento y te ayudamos a crecer en la dirección adecuada.
                 </p>
-                <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
-                  Branding
-                </h3>
-                <h3 className="relative isolate border-t border-stone-900/10 mt-4 pt-4 text-xl">
-                  Diseño y desarrollo web
-                </h3>
-                <h3 className="relative isolate border-t border-stone-900/10 mt-4 py-4 text-xl">
-                  Social Media & Paid
-                </h3>
+                <div className="relative isolate border-t border-stone-900/10 mt-4 pt-4">
+                  <h3 className="text-xl">Branding</h3>
+                  <p className="text-base text-stone-500 mt-1">
+                    Identidad visual, naming y tono de voz. Todo lo que necesitas para que tu marca cuente lo que realmente es.
+                  </p>
+                </div>
+                <div className="relative isolate border-t border-stone-900/10 mt-4 pt-4">
+                  <h3 className="text-xl">Diseño y desarrollo web</h3>
+                  <p className="text-base text-stone-500 mt-1">
+                    Webs a medida que funcionan, cargan rápido y convierten visitas en clientes.
+                  </p>
+                </div>
+                <div className="relative isolate border-t border-stone-900/10 mt-4 pt-4 pb-4">
+                  <h3 className="text-xl">Social Media & Paid</h3>
+                  <p className="text-base text-stone-500 mt-1">
+                    Estrategia, contenido y campañas de pago para que tu marca llegue a quien tiene que llegar.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

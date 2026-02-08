@@ -10,8 +10,10 @@ const Transition = ({ children }) => {
     setIsClient(true);
   }, []);
 
+  // Renderizar siempre el contenido para que los crawlers lo vean.
+  // Solo animar en client.
   if (!isClient) {
-    return null;
+    return <div>{children}</div>;
   }
 
   return (

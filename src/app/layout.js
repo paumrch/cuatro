@@ -1,17 +1,51 @@
-import Head from "next/head";
 import "./globals.css";
 import localFont from "next/font/local";
 import SmoothScrolling from "../components/smoothScrolling";
 import { Analytics } from "@vercel/analytics/react";
 import Transition from "@/components/transition";
+import JsonLd, { getOrganizationJsonLd, getWebSiteJsonLd } from "@/components/JsonLd";
+
+export const metadata = {
+  metadataBase: new URL("https://4dejunio.com"),
+  title: {
+    default: "4 de Junio — Agencia Creativa en Valencia",
+    template: "%s | 4 de Junio",
+  },
+  description:
+    "Agencia creativa en Valencia especializada en branding, diseño y desarrollo web, y estrategia digital. Acompañamos tu proyecto desde su nacimiento.",
+  icons: {
+    icon: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://4dejunio.com",
+    siteName: "4 de Junio",
+    title: "4 de Junio — Agencia Creativa en Valencia",
+    description:
+      "Agencia creativa en Valencia especializada en branding, diseño y desarrollo web, y estrategia digital.",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://4dejunio.com",
+  },
+};
 
 const myFont = localFont({
   src: [
-    {
-      path: "./fonts/BasisGrotesquePro-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
     {
       path: "./fonts/BasisGrotesquePro-Regular.woff2",
       weight: "400",
@@ -66,15 +100,12 @@ const myFont = localFont({
   display: "swap",
 });
 
-export default function RootLayout({ children, metadata = {} }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="es" className={myFont.className}>
-      <Head>
-        <link rel="icon" href="/icon.png" sizes="any" />
-        <meta name="description" content={metadata?.description} />
-        <link rel="canonical" href={metadata?.canonicalUrl} />
-      </Head>
       <body className="text-stone-900 bg-stone-50">
+        <JsonLd data={getOrganizationJsonLd()} />
+        <JsonLd data={getWebSiteJsonLd()} />
         <SmoothScrolling>
           <Transition>{children}</Transition>
         </SmoothScrolling>

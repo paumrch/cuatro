@@ -13,7 +13,7 @@ const AnimatedVideo = () => {
         autoPlay
         playsInline
         loop
-        preload="auto"
+        preload="metadata"
       >
         <source src="/cuatro.mp4" type="video/mp4" />
         Your browser does not support the video tag.
