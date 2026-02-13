@@ -38,7 +38,7 @@ URL de producción: `https://4dejunio.com`
 | Iconos | Heroicons | 2.x |
 | Formularios | @tailwindcss/forms | 0.5.x |
 | Analytics | Vercel Analytics | 1.3.x |
-| Fechas | date-fns | 3.x |
+| Fechas | Intl.DateTimeFormat | nativo |
 | Deploy | Vercel (implícito) | — |
 
 ---
@@ -190,3 +190,38 @@ npm run lint     # ESLint
 - El video del hero (`/cuatro.mp4`) está en `public/`.
 - Los scripts en `scripts/` son utilidades independientes para gestión de contenido WordPress vía REST API, no forman parte del build de Next.js.
 - La fuente Basis Grotesque Pro es propietaria (no Google Fonts).
+
+---
+
+## Dominios y redirects
+
+- **Dominio principal**: `4dejunio.com` (Vercel).
+- **Redirects 308 (permanentes)** configurados en `next.config.mjs`:
+  - `cuatrodejunio.com/*` → `https://4dejunio.com/*`
+  - `www.cuatrodejunio.com/*` → `https://4dejunio.com/*`
+  - `www.4dejunio.com/*` → `https://4dejunio.com/*`
+- Todos los dominios añadidos en el proyecto Vercel con SSL activo.
+
+---
+
+## Google Search Console
+
+- **Propiedad verificada**: `4dejunio.com` (service account `cuatro@cuatrodejunio.iam.gserviceaccount.com`).
+- **Script de consulta**: `scripts/gsc-report.mjs` — genera informe JSON + resumen en consola.
+- **Credenciales**: `cuatrodejunio-879dfa48f894.json` (gitignored).
+- **Estado (feb 2025)**: Fase temprana de indexación. 39 impresiones, 0 clics. Páginas pSEO de branding empezando a indexar.
+
+---
+
+## Auditoría Web Interface Guidelines (feb 2025)
+
+Auditoría completada y todos los fixes aplicados:
+
+- **Accesibilidad**: skip link, `<main>` landmark, `footer-heading` sr-only, `aria-hidden` en iconos decorativos, `focus-visible` rings.
+- **Reduced motion**: respetado globalmente en GSAP, Framer Motion, Lenis y autoplay de vídeo.
+- **Tipografía**: `text-wrap: balance` en todos los `<h1>`.
+- **Fechas**: migradas de `date-fns` a `Intl.DateTimeFormat("es-ES")`.
+- **Transiciones**: `transition` → `transition-colors` (especificidad correcta).
+- **Performance**: `preconnect` a `wp.4dejunio.com`, `theme-color` meta.
+- **Código muerto eliminado**: `navigation` const en meeting.jsx, `type="button"` en div.
+- **Mejoras UX**: placeholder de email mejorado, `spellCheck={false}` en input email, `<a>` → `<Link>` en footer.
