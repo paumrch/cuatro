@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 
 const dateFormatter = new Intl.DateTimeFormat("es-ES", {
-  day: "2-digit",
-  month: "2-digit",
+  day: "numeric",
+  month: "long",
   year: "numeric",
 });
 
@@ -23,7 +23,7 @@ export default async function Blog({ preview }) {
             <div className="text-left w-full sm:w-1/2 mt-8 mb-10">
               <h2 className="text-3xl">Blog</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {postsForHome.edges.map(({ node: post }) => {
                 const formattedDate = dateFormatter.format(new Date(post.date));
                 return (
