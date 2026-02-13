@@ -4,8 +4,8 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api";
 import Image from "next/image";
 
 const dateFormatter = new Intl.DateTimeFormat("es-ES", {
-  day: "2-digit",
-  month: "2-digit",
+  day: "numeric",
+  month: "long",
   year: "numeric",
 });
 import { notFound } from "next/navigation";
@@ -75,41 +75,41 @@ export default async function Post({ params }) {
         ])}
       />
       <Navbar />
-      <div className="post-content mx-auto px-6 pb-8 lg:px-8">
-        <div className="relative isolate pt-14">
-          <div className="py-12 sm:py-18 lg:pb-40">
-            <div className="mx-auto max-w-screen-md px-4">
-              <div className="text-left">
-                <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">{post.title}</h1>
-                <div className="flex gap-4 mt-4">
-                  <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
-                    {post.categories.edges[0]?.node?.name || "No Category"}
-                  </span>
-                  <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
-                    {formattedDate}
-                  </span>
-                </div>
-                <div className="mt-8">
-                  {post.featuredImage?.node?.sourceUrl && (
-                    <Image
-                      src={post.featuredImage.node.sourceUrl}
-                      alt={post.title}
-                      width={1920}
-                      height={1080}
-                      className="rounded-lg aspect-video object-cover"
-                      priority
-                    />
-                  )}
-                </div>
-                <div className="mt-8">
-                  <div
-                    className="prose lg:prose-lg prose-stone mx-auto"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
-                </div>
-              </div>
-            </div>
+      <div className="mx-auto px-6 pb-8 lg:px-8">
+        {/* Hero image — full width */}
+        {post.featuredImage?.node?.sourceUrl && (
+          <div className="mt-14">
+            <Image
+              src={post.featuredImage.node.sourceUrl}
+              alt={post.title}
+              width={1920}
+              height={1080}
+              className="rounded-lg aspect-[16/10] object-cover w-full"
+              priority
+            />
           </div>
+        )}
+
+        {/* Title + meta — centered */}
+        <div className="max-w-3xl mx-auto mt-10 mb-12">
+          <h1 className="text-2xl sm:text-3xl font-normal tracking-tight text-balance">
+            {post.title}
+          </h1>
+          <div className="mt-4 flex gap-4 text-sm text-stone-400">
+            <span className="uppercase tracking-wide">
+              {post.categories.edges[0]?.node?.name || "Blog"}
+            </span>
+            <span>·</span>
+            <span>{formattedDate}</span>
+          </div>
+        </div>
+
+        {/* Article content — centered */}
+        <div className="post-content max-w-3xl mx-auto">
+          <div
+            className="prose lg:prose-lg prose-stone"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
       </div>
       <Footer />

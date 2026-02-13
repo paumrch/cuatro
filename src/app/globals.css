@@ -20,27 +20,31 @@
 }
 
 .post-content h1 {
-  @apply text-4xl font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-2xl font-normal mt-10 mb-4 scroll-mt-20 uppercase tracking-wide;
 }
 
 .post-content h2 {
-  @apply text-3xl font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-xl font-normal mt-10 mb-4 scroll-mt-20 uppercase tracking-wide;
 }
 
 .post-content h3 {
-  @apply text-2xl font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-lg font-normal mt-8 mb-3 scroll-mt-20 uppercase tracking-wide;
 }
 
 .post-content h4 {
-  @apply text-xl font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-base font-normal mt-8 mb-3 scroll-mt-20 uppercase tracking-wide;
 }
 
 .post-content h5 {
-  @apply text-lg font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-base font-normal mt-6 mb-2 scroll-mt-20;
 }
 
 .post-content h6 {
-  @apply text-base font-medium mt-2 mb-4 scroll-mt-20;
+  @apply text-sm font-normal mt-6 mb-2 scroll-mt-20;
+}
+
+.post-content p {
+  @apply mb-6 leading-relaxed;
 }
 
 /* Respetar preferencia de reducción de movimiento */

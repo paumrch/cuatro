@@ -5,8 +5,8 @@ import { getAllPublishedPosts } from "@/lib/api";
 import JsonLd, { getBreadcrumbJsonLd } from "@/components/JsonLd";
 
 const dateFormatter = new Intl.DateTimeFormat("es-ES", {
-  day: "2-digit",
-  month: "2-digit",
+  day: "numeric",
+  month: "long",
   year: "numeric",
 });
 
@@ -41,13 +41,13 @@ export default async function BlogIndex() {
       <div className="mx-auto px-6 pb-8 lg:px-8">
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">Blog</h1>
+            <h1 className="text-3xl sm:text-4xl font-normal tracking-tight text-balance">Blog</h1>
             <p className="mt-4 text-lg text-stone-600 max-w-2xl">
               Ideas, reflexiones y consejos prácticos sobre branding, diseño web
               y estrategia digital.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 sm:mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12 sm:mt-16">
               {postsData.edges.map(({ node: post }) => {
                 const formattedDate = dateFormatter.format(
                   new Date(post.date)
