@@ -58,19 +58,47 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Info + Bottom bar */}
-      <div className="border-t border-stone-900/10 py-8 flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 text-sm text-stone-500">
-          <div>
-            <h3 className="text-stone-900 font-medium mb-1">Oficina</h3>
-            <p>Pasaje Dr. Bartual Moret 8 - 6.</p>
-            <p>46010, Valencia.</p>
-          </div>
-          <div>
-            <h3 className="text-stone-900 font-medium mb-1">Email</h3>
-            <p>hola@4dejunio.com</p>
+      {/* SEO Internal Links */}
+      <div className="border-t border-stone-900/10 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
+        <div>
+          <h3 className="text-stone-900 font-medium mb-3">Servicios</h3>
+          <ul className="space-y-2">
+            <li><Link href="/servicios/branding" className="text-stone-400 hover:text-stone-600 transition-colors">Branding</Link></li>
+            <li><Link href="/servicios/diseno-web" className="text-stone-400 hover:text-stone-600 transition-colors">Diseño Web</Link></li>
+            <li><Link href="/servicios/implementacion-ia" className="text-stone-400 hover:text-stone-600 transition-colors">Implementación de IA</Link></li>
+            <li><Link href="/servicios/automatizaciones" className="text-stone-400 hover:text-stone-600 transition-colors">Automatizaciones</Link></li>
+            <li><Link href="/servicios/paid-media" className="text-stone-400 hover:text-stone-600 transition-colors">Paid Media</Link></li>
+            <li><Link href="/servicios/posicionamiento-seo" className="text-stone-400 hover:text-stone-600 transition-colors">Posicionamiento SEO</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-stone-900 font-medium mb-3">Ciudades</h3>
+          <ul className="space-y-2">
+            <li><Link href="/servicios/diseno-web/madrid" className="text-stone-400 hover:text-stone-600 transition-colors">Madrid</Link></li>
+            <li><Link href="/servicios/diseno-web/barcelona" className="text-stone-400 hover:text-stone-600 transition-colors">Barcelona</Link></li>
+            <li><Link href="/servicios/diseno-web/valencia" className="text-stone-400 hover:text-stone-600 transition-colors">Valencia</Link></li>
+            <li><Link href="/servicios/diseno-web/sevilla" className="text-stone-400 hover:text-stone-600 transition-colors">Sevilla</Link></li>
+            <li><Link href="/servicios/diseno-web/malaga" className="text-stone-400 hover:text-stone-600 transition-colors">Málaga</Link></li>
+            <li><Link href="/servicios/diseno-web/bilbao" className="text-stone-400 hover:text-stone-600 transition-colors">Bilbao</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-stone-900 font-medium mb-3">Contacto</h3>
+          <ul className="space-y-2">
+            <li><Link href="/servicios/diseno-web/ecommerce" className="text-stone-400 hover:text-stone-600 transition-colors">Ecommerce</Link></li>
+            <li><Link href="/servicios/diseno-web/startups" className="text-stone-400 hover:text-stone-600 transition-colors">Startups y Tech</Link></li>
+            <li><Link href="/servicios/diseno-web/restauracion" className="text-stone-400 hover:text-stone-600 transition-colors">Hostelería</Link></li>
+          </ul>
+          <div className="mt-6">
+            <p className="text-stone-500">Pasaje Dr. Bartual Moret 8 - 6.</p>
+            <p className="text-stone-500">46010, Valencia.</p>
+            <p className="text-stone-500 mt-2">hola@4dejunio.com</p>
           </div>
         </div>
+      </div>
+
+      {/* Bottom bar: social + legal + copyright */}
+      <div className="border-t border-stone-900/10 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-6">
           {social.map((item) => (
             <Link
@@ -84,19 +112,17 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-      </div>
-
-      {/* Copyright bar */}
-      <div className="border-t border-stone-900/10 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <p className="text-xs text-stone-400">
-          4 de Junio &copy; {currentYear}. Todos los derechos reservados.
-        </p>
-        <Link
-          href="/legal"
-          className="text-xs text-stone-400 hover:text-stone-600 transition-colors"
-        >
-          Aviso legal y privacidad
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/legal"
+            className="text-xs text-stone-400 hover:text-stone-600 transition-colors"
+          >
+            Aviso legal y privacidad
+          </Link>
+          <p className="text-xs text-stone-400">
+            4 de Junio &copy; {currentYear}
+          </p>
+        </div>
       </div>
     </footer>
   );
