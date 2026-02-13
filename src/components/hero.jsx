@@ -1,4 +1,5 @@
 import AnimatedVideo from "./animated/AnimatedVideo";
+import AnimatedElement from "./AnimatedElement";
 import Link from "next/link";
 import { getHomePageData } from "../lib/api";
 
@@ -15,17 +16,18 @@ export default async function Hero({ preview }) {
           aria-hidden="true"
         ></div>
         <div className="py-16 sm:py-24 lg:pb-32">
+          <AnimatedElement animation={{ duration: 0.7 }}>
           <div className="mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
-              {/* Video — left on desktop, below on mobile */}
-              <div className="order-2 lg:order-1 lg:w-1/2 mt-12 lg:mt-0">
+              {/* Video — first on mobile, left on desktop */}
+              <div className="lg:w-1/2">
                 <div className="rounded-lg overflow-hidden">
                   <AnimatedVideo />
                 </div>
               </div>
-              {/* Content — right on desktop, above on mobile */}
-              <div className="order-1 lg:order-2 lg:w-1/2">
-                <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-normal tracking-tight text-balance">
+              {/* Content — second on mobile, right on desktop */}
+              <div className="lg:w-1/2 mt-12 lg:mt-0">
+                <h1 className="text-3xl sm:text-4xl lg:text-[2rem] font-normal tracking-tight text-balance">
                   {homeHeading}
                 </h1>
                 <p className="mt-4 text-lg sm:text-xl text-stone-500">
@@ -50,6 +52,7 @@ export default async function Hero({ preview }) {
               </div>
             </div>
           </div>
+          </AnimatedElement>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
