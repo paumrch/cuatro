@@ -20,32 +20,28 @@ export default async function Projects({ preview }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-24">
               {projectsData.projects.edges.map(({ node: project }) => {
                 return (
-                  <div className="w-full" key={project.slug}>
-                    <Link href={`/work/${project.slug}`}>
-                      <div className="aspect-video bg-stone-900 rounded-lg overflow-hidden">
-                        <Image
-                          src={
-                            project.projectsContent.projectPicture.node
-                              .sourceUrl
-                          }
-                          alt={project.projectsContent.projectTitle}
-                          width={1920}
-                          height={1080}
-                          className="rounded-lg"
-                        />
-                      </div>
-                    </Link>
+                  <Link href={`/work/${project.slug}`} key={project.slug} className="group block cursor-pointer">
+                    <div className="aspect-video bg-stone-900 rounded-lg overflow-hidden">
+                      <Image
+                        src={
+                          project.projectsContent.projectPicture.node
+                            .sourceUrl
+                        }
+                        alt={project.projectsContent.projectTitle}
+                        width={1920}
+                        height={1080}
+                        className="rounded-lg object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                     <div className="flex justify-between mt-6 text-2xl">
-                      <Link href={`/work/${project.slug}`}>
-                        <h3 className="">
-                          {project.projectsContent.projectTitle}
-                        </h3>
-                      </Link>
+                      <h3>
+                        {project.projectsContent.projectTitle}
+                      </h3>
                       <p className="text-stone-600 text-lg">
                         {project.projectsContent.projectCategory}
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
