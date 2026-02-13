@@ -1,6 +1,12 @@
 {
     "chat.tools.terminal.autoApprove": {
         "npx skills": true,
-        "npx next": true
+        "npx next": true,
+        "npm install": true,
+        "/^node scripts/gsc-report\\.mjs$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "vercel": true
     }
 }

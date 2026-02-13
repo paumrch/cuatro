@@ -8,6 +8,12 @@ const AnimatedElement = ({ children, animation, delay = 0 }) => {
 
   useEffect(() => {
     const element = elementRef.current;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      gsap.set(element, { opacity: 1, visibility: 'visible' });
+      return;
+    }
 
     gsap.set(element, { opacity: 0, visibility: 'hidden' });
 

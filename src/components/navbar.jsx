@@ -12,14 +12,17 @@ export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const timeout = setTimeout(() => {
       setIsVisible(true);
-      gsap.fromTo(
-        ".animated-component",
-        { opacity: 0 },
-        { opacity: 1, duration: 1, ease: "power2.out" }
-      );
-    }, 1000);
+      if (!prefersReducedMotion) {
+        gsap.fromTo(
+          ".animated-component",
+          { opacity: 0 },
+          { opacity: 1, duration: 1, ease: "power2.out" }
+        );
+      }
+    }, prefersReducedMotion ? 0 : 1000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -27,7 +30,7 @@ export default function Navbar() {
   return (
     <header className="">
       <nav className="mx-auto flex items-center justify-between p-6">
-        <Link href="/" className="-m-1.5 p-1.5">
+        <Link href="/" className="-m-1.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 rounded-sm">
           <span className="sr-only">4 de Junio</span>
           <Image
             className="h-4 w-auto"

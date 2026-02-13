@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react"
+"use client";
+
+import { useState, useEffect } from "react";
+
+const timeFormatter = new Intl.DateTimeFormat("es-ES", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
 
 export default function Time() {
   const [showTimer, setShowTimer] = useState(false);
-  const [currentTime, setCurrentTime] = useState(() => {
-    const date = new Date()
-    const hours = date.getHours().toString().padStart(2, "0")
-    const minutes = date.getMinutes().toString().padStart(2, "0")
-    const seconds = date.getSeconds().toString().padStart(2, "0")
-    return `${hours}:${minutes}:${seconds}`
-  })
+  const [currentTime, setCurrentTime] = useState(() =>
+    timeFormatter.format(new Date())
+  );
 
   useEffect(() => {
-    setShowTimer(true); // Mostrar el temporizador una vez que el componente se haya montado en el cliente
+    setShowTimer(true);
 
     const interval = setInterval(() => {
-      const date = new Date()
-      const hours = date.getHours().toString().padStart(2, "0")
-      const minutes = date.getMinutes().toString().padStart(2, "0")
-      const seconds = date.getSeconds().toString().padStart(2, "0")
-      setCurrentTime(`${hours}:${minutes}:${seconds}`)
-    }, 1000)
+      setCurrentTime(timeFormatter.format(new Date()));
+    }, 1000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <p suppressHydrationWarning>
       {showTimer ? currentTime : null}
     </p>
-  )
+  );
 }

@@ -1,9 +1,11 @@
 import Meeting from "@/components/meeting";
 import Copyright from "@/components/copyright";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto px-6 lg:px-8">
         <div className="relative isolate border-t border-stone-900/10">
           <div
@@ -26,7 +28,7 @@ export default function Footer() {
                   <p className="text-stone-500">46010, Valencia.</p>
                   <h2 className="text-base mt-4">Email</h2>
                   <p className="text-stone-500">hola@4dejunio.com</p>
-                  <a href="/legal" className="text-stone-400 text-sm mt-4 block hover:text-stone-600 transition">Aviso legal y privacidad</a>
+                  <Link href="/legal" className="text-stone-400 text-sm mt-4 block hover:text-stone-600 transition-colors">Aviso legal y privacidad</Link>
                 </div>
               </div>
             </div>
