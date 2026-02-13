@@ -51,6 +51,7 @@ export default async function Project({ params }) {
   }
 
   const { project } = data;
+  const projectYear = new Date(project.date).getFullYear();
 
   return (
     <>
@@ -72,73 +73,91 @@ export default async function Project({ params }) {
       />
       <Navbar />
       <div className="mx-auto px-6 pb-8 lg:px-8">
-        <div
-          id="featuredImage"
-          className="mx-auto flow-root object-contain relative"
-        >
-          {project.projectsContent?.projectPicture.node?.sourceUrl && (
-            <div className="relative aspect-square md:aspect-video">
-              <Image
-                src={project.projectsContent?.projectPicture.node?.sourceUrl}
-                alt={`Imagen principal del proyecto ${project.projectsContent?.projectTitle || project.title}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 100vw"
-                style={{ objectFit: "cover" }}
-                className="rounded-lg"
-                priority
-              />
-            </div>
-          )}
-        </div>
-        <div id="projectContent" className="mx-auto">
-          <div id="projectTitle" className="mt-6">
-            <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">
+        {/* Hero image — full bleed */}
+        {project.projectsContent?.projectPicture.node?.sourceUrl && (
+          <div className="relative aspect-[3/4] sm:aspect-[16/10] mt-14">
+            <Image
+              src={project.projectsContent.projectPicture.node.sourceUrl}
+              alt={`Imagen principal del proyecto ${project.projectsContent?.projectTitle || project.title}`}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+              className="rounded-lg"
+              priority
+            />
+          </div>
+        )}
+
+        {/* Title block */}
+        <div className="mt-10 mb-16 lg:flex lg:items-start lg:justify-between lg:gap-16">
+          <div className="lg:flex-1">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-balance">
               {project.projectsContent.projectTitle}
             </h1>
+            {project.projectsContent.titularprincipal && (
+              <p className="mt-4 text-lg lg:text-xl text-stone-400 text-balance">
+                {project.projectsContent.titularprincipal}
+              </p>
+            )}
           </div>
-          <div id="projectClaim">
-            <h2 className="my-4 text-2xl md:text-4xl font-medium">
-              {project.projectsContent.titularprincipal}
-            </h2>
+          <div className="mt-6 lg:mt-1 flex gap-6 lg:flex-col lg:items-end lg:gap-1 text-sm text-stone-400">
+            <span className="uppercase tracking-wide">
+              {project.projectsContent?.projectCategory}
+            </span>
+            <span>{projectYear}</span>
           </div>
-          <div id="projectInfo" className="my-12 md:mx-48 lg:mx-64 xl:mx-96">
-            <p className="text-lg my-12">{project.projectsContent.parrafo1}</p>
-            <h2 className="text-xl md:text-2xl font-medium my-12">
+        </div>
+
+        {/* El reto */}
+        <div className="mb-16">
+          <h2 className="text-sm uppercase tracking-wide text-stone-400 mb-4">El reto</h2>
+          <p className="text-lg lg:text-xl text-stone-600 leading-relaxed">
+            {project.projectsContent.parrafo1}
+          </p>
+          {project.projectsContent.subtitular1 && (
+            <p className="mt-8 text-lg lg:text-xl text-stone-400 text-balance leading-relaxed">
               {project.projectsContent.subtitular1}
-            </h2>
-          </div>
-          <div
-            id="twoPictures"
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-          >
-            <div id="firstPicture" className="relative w-full h-96">
+            </p>
+          )}
+        </div>
+
+        {/* Detail images — full width */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+          {project.projectsContent?.projectPicture1?.node?.sourceUrl && (
+            <div className="relative w-full aspect-[4/3]">
               <Image
-                src={project.projectsContent?.projectPicture1?.node?.sourceUrl}
+                src={project.projectsContent.projectPicture1.node.sourceUrl}
                 alt={`Detalle del proyecto ${project.projectsContent?.projectTitle || project.title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-lg object-cover"
               />
             </div>
-            <div id="secondPicture" className="relative w-full h-96">
+          )}
+          {project.projectsContent?.projectPicture2?.node?.sourceUrl && (
+            <div className="relative w-full aspect-[4/3]">
               <Image
-                src={project.projectsContent?.projectPicture2?.node?.sourceUrl}
+                src={project.projectsContent.projectPicture2.node.sourceUrl}
                 alt={`Detalle adicional del proyecto ${project.projectsContent?.projectTitle || project.title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-lg object-cover"
               />
             </div>
-          </div>
+          )}
+        </div>
 
-          <div id="projectInfo" className="my-12 md:mx-48 lg:mx-64 xl:mx-96">
-            <p className="text-lg">{project.projectsContent.parrafo2}</p>
-          </div>
-          <div id="projectClaim">
-            <h2 className="text-center text-xl md:text-2xl font-medium">
+        {/* La solución */}
+        <div className="mb-16">
+          <h2 className="text-sm uppercase tracking-wide text-stone-400 mb-4">La solución</h2>
+          <p className="text-lg lg:text-xl text-stone-600 leading-relaxed">
+            {project.projectsContent.parrafo2}
+          </p>
+          {project.projectsContent.subtitular2 && (
+            <p className="mt-8 text-lg lg:text-xl text-stone-400 text-balance leading-relaxed">
               {project.projectsContent.subtitular2}
-            </h2>
-          </div>
+            </p>
+          )}
         </div>
       </div>
       <Footer />
