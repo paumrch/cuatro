@@ -123,7 +123,7 @@ function ServiceCityPage({ service, city }) {
               {/* Hero */}
               <div className="mb-12">
                 <span className="text-3xl">{service.icon}</span>
-                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl font-medium mt-4 tracking-tight text-balance">
                   {service.name} {city.preposition}
                 </h1>
                 <p className="mt-4 text-lg text-stone-600">
@@ -133,7 +133,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* City Context */}
               <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 mb-10">
-                <h2 className="font-semibold text-lg mb-2">
+                <h2 className="font-medium text-lg mb-2">
                   El mercado digital {city.preposition}
                 </h2>
                 <p className="text-stone-700 text-sm leading-relaxed">
@@ -157,7 +157,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* Benefits */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Qué vas a conseguir con {service.shortName}{" "}
                   {city.preposition}
                 </h2>
@@ -167,7 +167,7 @@ function ServiceCityPage({ service, city }) {
                       key={i}
                       className="border border-stone-200 rounded-lg p-6"
                     >
-                      <h3 className="font-semibold">{benefit.title}</h3>
+                      <h3 className="font-medium">{benefit.title}</h3>
                       <p className="mt-2 text-sm text-stone-600">
                         {benefit.description}
                       </p>
@@ -178,7 +178,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* Process */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Cómo trabajamos
                 </h2>
                 <div className="space-y-4">
@@ -188,7 +188,7 @@ function ServiceCityPage({ service, city }) {
                         {i + 1}
                       </span>
                       <div>
-                        <h3 className="font-semibold">{step.step}</h3>
+                        <h3 className="font-medium">{step.step}</h3>
                         <p className="text-sm text-stone-600 mt-1">
                           {step.description}
                         </p>
@@ -200,7 +200,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* FAQ */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Preguntas frecuentes sobre {service.shortName}{" "}
                   {city.preposition}
                 </h2>
@@ -224,7 +224,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* Internal Links — Same service, other cities */}
               <section className="mb-8 border-t border-stone-200 pt-10">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   {service.name} en otras ciudades
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -242,7 +242,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* Internal Links — Other services in same city */}
               <section className="mb-16">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   Otros servicios {city.preposition}
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -260,7 +260,7 @@ function ServiceCityPage({ service, city }) {
 
               {/* CTA */}
               <div className="text-center border-t border-stone-200 pt-12">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-2xl font-medium">
                   ¿Necesitas {service.shortName.toLowerCase()}{" "}
                   {city.preposition}?
                 </h2>
@@ -345,7 +345,7 @@ function ServiceSectorPage({ service, sector }) {
               {/* Hero */}
               <div className="mb-12">
                 <span className="text-3xl">{service.icon}</span>
-                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl font-medium mt-4 tracking-tight text-balance">
                   {service.name} {sector.preposition}
                 </h1>
                 <p className="mt-4 text-lg text-stone-600">
@@ -355,7 +355,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* Sector Challenges */}
               <section className="mb-12">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Retos del {sector.name.toLowerCase()} que resolvemos
                 </h2>
                 <ul className="space-y-3">
@@ -377,7 +377,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* How we solve it — service body */}
               <section className="mb-12">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Cómo {service.shortName.toLowerCase()} resuelve estos retos
                 </h2>
                 <p className="text-base text-stone-700 leading-relaxed mb-6">
@@ -393,7 +393,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* Expected Outcomes */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Lo que puedes esperar
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -413,7 +413,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* Process */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Cómo trabajamos
                 </h2>
                 <div className="space-y-4">
@@ -423,7 +423,7 @@ function ServiceSectorPage({ service, sector }) {
                         {i + 1}
                       </span>
                       <div>
-                        <h3 className="font-semibold">{step.step}</h3>
+                        <h3 className="font-medium">{step.step}</h3>
                         <p className="text-sm text-stone-600 mt-1">
                           {step.description}
                         </p>
@@ -435,7 +435,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* FAQ */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Preguntas frecuentes
                 </h2>
                 <div className="space-y-4">
@@ -458,7 +458,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* Internal Links — Same service, other sectors */}
               <section className="mb-8 border-t border-stone-200 pt-10">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   {service.name} en otros sectores
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -476,7 +476,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* Internal Links — Other services for same sector */}
               <section className="mb-16">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   Otros servicios {sector.preposition.toLowerCase()}
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -494,7 +494,7 @@ function ServiceSectorPage({ service, sector }) {
 
               {/* CTA */}
               <div className="text-center border-t border-stone-200 pt-12">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-2xl font-medium">
                   ¿Necesitas {service.shortName.toLowerCase()}{" "}
                   {sector.preposition.toLowerCase()}?
                 </h2>

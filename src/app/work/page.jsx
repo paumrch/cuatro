@@ -36,7 +36,7 @@ export default async function WorkIndex() {
       <div className="mx-auto px-6 pb-8 lg:px-8">
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
-            <h1 className="text-4xl md:text-5xl font-medium text-balance">Proyectos</h1>
+            <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">Proyectos</h1>
             <p className="mt-4 text-lg text-stone-600 max-w-2xl">
               Una selección de trabajos de branding, diseño web y estrategia
               digital para marcas que buscan crecer con propósito.

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { getAllPostsForHome } from "@/lib/api";
 import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 
 const dateFormatter = new Intl.DateTimeFormat("es-ES", {
   day: "2-digit",
@@ -20,70 +20,33 @@ export default async function Blog({ preview }) {
         ></div>
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
-            <div className="text-left w-full sm:w-1/2 mt-8">
+            <div className="text-left w-full sm:w-1/2 mt-8 mb-10">
               <h2 className="text-3xl">Blog</h2>
             </div>
-            <div className="sm:hidden flex overflow-x-auto my-8 no-scrollbar">
-              <div className="flex flex-nowrap space-x-6">
-                {postsForHome.edges.map(({ node: post }) => {
-                  const formattedDate = dateFormatter.format(new Date(post.date));
-                  return (
-                    <div key={post.slug} className="flex-none w-64">
-                      {post.featuredImage?.node?.sourceUrl && (
-                        <Link href={`/blog/${post.slug}`}>
-                          <div className="aspect-square rounded-lg overflow-hidden">
-                            <Image
-                              src={post.featuredImage.node.sourceUrl}
-                              alt={post.title}
-                              width={1080}
-                              height={1080}
-                              className="rounded-lg object-cover w-full h-full"
-                            />
-                          </div>
-                        </Link>
-                      )}
-                      <Link href={`/blog/${post.slug}`}>
-                        <div>
-                          <div className="flex my-4 gap-4 uppercase font-normal justify-between text-xs">
-                            <span className="">{post.categories.edges[0].node.name}</span>
-                            <span>{formattedDate}</span>
-                          </div>
-                          <p className="text-2xl font-medium">{post.title}</p>
-                        </div>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {postsForHome.edges.map(({ node: post }) => {
                 const formattedDate = dateFormatter.format(new Date(post.date));
                 return (
-                  <div key={post.slug} className="flex flex-col gap-4">
-                    {post.featuredImage?.node?.sourceUrl && (
-                      <Link href={`/blog/${post.slug}`}>
-                        <div className="aspect-square rounded-lg overflow-hidden">
-                          <Image
-                            src={post.featuredImage.node.sourceUrl}
-                            alt={post.title}
-                            width={1080}
-                            height={1080}
-                            className="rounded-lg object-cover w-full h-full"
-                          />
-                        </div>
-                      </Link>
-                    )}
-                    <Link href={`/blog/${post.slug}`}>
-                      <div className="">
-                        <div className="flex mt-4 gap-4 text-sm uppercase font-normal justify-between no-scrollbar">
-                          <span>{post.categories.edges[0].node.name}</span>
-                          <span>{formattedDate}</span>
-                        </div>
-                        <p className="text-2xl font-medium">{post.title}</p>
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col justify-between rounded-lg border border-stone-200 p-6 cursor-pointer hover:border-stone-400 hover:shadow-sm transition-all duration-200"
+                  >
+                    <div>
+                      <div className="flex items-start justify-between">
+                        <span className="text-xs uppercase text-stone-500 tracking-wide">
+                          {post.categories.edges[0]?.node?.name || "Blog"}
+                        </span>
+                        <ArrowUpRightIcon className="w-4 h-4 text-stone-300 group-hover:text-stone-900 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-200" aria-hidden="true" />
                       </div>
-                    </Link>
-                  </div>
+                      <h3 className="text-lg font-medium mt-3 text-balance">
+                        {post.title}
+                      </h3>
+                    </div>
+                    <span className="text-sm text-stone-400 mt-4">
+                      {formattedDate}
+                    </span>
+                  </Link>
                 );
               })}
             </div>

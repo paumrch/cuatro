@@ -38,7 +38,7 @@ export default function ServiciosIndex() {
             <div className="mx-auto max-w-screen-lg">
               {/* Hero */}
               <div className="text-left mb-16">
-                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">
                   Lo que hacemos
                 </h1>
                 <p className="mt-6 text-lg text-stone-600 max-w-2xl">
@@ -58,7 +58,7 @@ export default function ServiciosIndex() {
                     className="group border border-stone-200 rounded-lg p-8 hover:border-stone-400 transition-colors duration-300"
                   >
                     <span className="text-2xl">{service.icon}</span>
-                    <h2 className="text-xl font-semibold mt-3 group-hover:underline">
+                    <h2 className="text-xl font-medium mt-3 group-hover:underline">
                       {service.name}
                     </h2>
                     <p className="mt-2 text-stone-600 text-sm leading-relaxed">
@@ -73,7 +73,7 @@ export default function ServiciosIndex() {
 
               {/* CTA */}
               <div className="mt-20 text-center border-t border-stone-200 pt-16">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-2xl font-medium">
                   ¿No sabes por dónde empezar?
                 </h2>
                 <p className="mt-3 text-stone-600 max-w-lg mx-auto">

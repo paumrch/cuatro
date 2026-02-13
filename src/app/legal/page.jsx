@@ -20,7 +20,7 @@ export default function Legal() {
       <Navbar />
       <div className="mx-auto px-6 pb-8 lg:px-8 max-w-3xl">
         <div className="py-8 sm:py-12 lg:pb-12">
-          <h1 className="text-4xl font-medium text-balance">Aviso Legal</h1>
+          <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">Aviso Legal</h1>
 
           <section className="mt-12 space-y-4 text-stone-600 leading-7">
             <h2 className="text-2xl font-medium text-stone-900">

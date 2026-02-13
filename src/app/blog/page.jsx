@@ -1,6 +1,5 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllPublishedPosts } from "@/lib/api";
 import JsonLd, { getBreadcrumbJsonLd } from "@/components/JsonLd";
@@ -42,52 +41,43 @@ export default async function BlogIndex() {
       <div className="mx-auto px-6 pb-8 lg:px-8">
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
-            <h1 className="text-4xl md:text-5xl font-medium text-balance">Blog</h1>
+            <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">Blog</h1>
             <p className="mt-4 text-lg text-stone-600 max-w-2xl">
               Ideas, reflexiones y consejos prácticos sobre branding, diseño web
               y estrategia digital.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 sm:mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 sm:mt-16">
               {postsData.edges.map(({ node: post }) => {
                 const formattedDate = dateFormatter.format(
                   new Date(post.date)
                 );
                 return (
-                  <article key={post.slug} className="flex flex-col gap-4">
-                    {post.featuredImage?.node?.sourceUrl && (
-                      <Link href={`/blog/${post.slug}`}>
-                        <div className="aspect-video rounded-lg overflow-hidden">
-                          <Image
-                            src={post.featuredImage.node.sourceUrl}
-                            alt={post.title}
-                            width={1080}
-                            height={607}
-                            className="rounded-lg object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                          />
-                        </div>
-                      </Link>
-                    )}
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col justify-between rounded-lg border border-stone-200 p-6 cursor-pointer hover:border-stone-400 hover:shadow-sm transition-all duration-200"
+                  >
                     <div>
-                      <div className="flex mt-2 gap-4 text-sm uppercase font-normal justify-between text-stone-500">
-                        <span>
+                      <div className="flex items-start justify-between">
+                        <span className="text-xs uppercase text-stone-500 tracking-wide">
                           {post.categories?.edges?.[0]?.node?.name || "Blog"}
                         </span>
-                        <span>{formattedDate}</span>
+                        <span className="text-xs text-stone-400">
+                          {formattedDate}
+                        </span>
                       </div>
-                      <Link href={`/blog/${post.slug}`}>
-                        <h2 className="text-xl font-medium mt-2 hover:underline">
-                          {post.title}
-                        </h2>
-                      </Link>
+                      <h2 className="text-lg font-medium mt-3 text-balance">
+                        {post.title}
+                      </h2>
                       {post.excerpt && (
                         <p
-                          className="text-stone-600 mt-2 text-sm line-clamp-3"
+                          className="text-sm text-stone-500 mt-2 line-clamp-3 leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: post.excerpt }}
                         />
                       )}
                     </div>
-                  </article>
+                  </Link>
                 );
               })}
             </div>

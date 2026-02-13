@@ -80,7 +80,7 @@ export default async function Post({ params }) {
           <div className="py-12 sm:py-18 lg:pb-40">
             <div className="mx-auto max-w-screen-md px-4">
               <div className="text-left">
-                <h1 className="text-3xl font-semibold text-balance">{post.title}</h1>
+                <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-balance">{post.title}</h1>
                 <div className="flex gap-4 mt-4">
                   <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
                     {post.categories.edges[0]?.node?.name || "No Category"}
@@ -103,7 +103,7 @@ export default async function Post({ params }) {
                 </div>
                 <div className="mt-8">
                   <div
-                    className="prose lg:prose-xl mx-auto"
+                    className="prose lg:prose-lg prose-stone mx-auto"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
                 </div>

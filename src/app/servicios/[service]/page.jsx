@@ -93,7 +93,7 @@ export default function ServicePage({ params }) {
               {/* Hero */}
               <div className="mb-12">
                 <span className="text-3xl">{service.icon}</span>
-                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl font-medium mt-4 tracking-tight text-balance">
                   {service.heroHeading}
                 </h1>
                 <p className="mt-4 text-lg text-stone-600">
@@ -114,7 +114,7 @@ export default function ServicePage({ params }) {
 
               {/* Benefits */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Qué vas a conseguir
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -123,7 +123,7 @@ export default function ServicePage({ params }) {
                       key={i}
                       className="border border-stone-200 rounded-lg p-6"
                     >
-                      <h3 className="font-semibold">{benefit.title}</h3>
+                      <h3 className="font-medium">{benefit.title}</h3>
                       <p className="mt-2 text-sm text-stone-600">
                         {benefit.description}
                       </p>
@@ -134,7 +134,7 @@ export default function ServicePage({ params }) {
 
               {/* Process */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Cómo trabajamos
                 </h2>
                 <div className="space-y-4">
@@ -144,7 +144,7 @@ export default function ServicePage({ params }) {
                         {i + 1}
                       </span>
                       <div>
-                        <h3 className="font-semibold">{step.step}</h3>
+                        <h3 className="font-medium">{step.step}</h3>
                         <p className="text-sm text-stone-600 mt-1">
                           {step.description}
                         </p>
@@ -156,7 +156,7 @@ export default function ServicePage({ params }) {
 
               {/* FAQ */}
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
+                <h2 className="text-2xl font-medium mb-6">
                   Preguntas frecuentes
                 </h2>
                 <div className="space-y-4">
@@ -179,7 +179,7 @@ export default function ServicePage({ params }) {
 
               {/* Internal Links — Cities */}
               <section className="mb-12 border-t border-stone-200 pt-10">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   {service.name} por ciudad
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -197,7 +197,7 @@ export default function ServicePage({ params }) {
 
               {/* Internal Links — Sectors */}
               <section className="mb-16">
-                <h2 className="text-lg font-semibold mb-4">
+                <h2 className="text-lg font-medium mb-4">
                   {service.name} por sector
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -215,7 +215,7 @@ export default function ServicePage({ params }) {
 
               {/* CTA */}
               <div className="text-center border-t border-stone-200 pt-12">
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-2xl font-medium">
                   ¿Hablamos de tu proyecto?
                 </h2>
                 <p className="mt-3 text-stone-600">
