@@ -81,7 +81,7 @@ export default function ServiciosIndex() {
                   mayor impacto pueden tener en tu negocio.
                 </p>
                 <Link
-                  href="https://calendar.app.google/12L5HW9PUfJbCfrL8"
+                  href="https://www.cal.eu/paumarch/15min"
                   target="_blank"
                   className="inline-flex items-center gap-2 mt-6 rounded-md bg-stone-900 px-6 py-3 text-sm text-white hover:bg-stone-700 transition-colors"
                 >

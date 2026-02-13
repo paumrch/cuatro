@@ -33,7 +33,8 @@ export default async function Hero({ preview }) {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="mailto:pau@4dejunio.com"
+                    href="https://www.cal.eu/paumarch/15min"
+                    target="_blank"
                     className="inline-flex items-center rounded-md border border-stone-300 bg-transparent px-6 py-2.5 text-sm font-medium text-stone-900 hover:border-stone-900 hover:text-stone-900 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2"
                   >
                     <span className="h-2 w-2 bg-emerald-500 rounded-full mr-2"></span>
