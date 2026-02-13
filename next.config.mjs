@@ -1,5 +1,43 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      // Redirigir cuatrodejunio.com y www.4dejunio.com → 4dejunio.com
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "cuatrodejunio.com",
+          },
+        ],
+        destination: "https://4dejunio.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.cuatrodejunio.com",
+          },
+        ],
+        destination: "https://4dejunio.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.4dejunio.com",
+          },
+        ],
+        destination: "https://4dejunio.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     dangerouslyAllowSVG: true,
     loader: "default", // Utiliza el cargador de imágenes predeterminado

@@ -3,8 +3,13 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPublishedPosts } from "@/lib/api";
-import { format } from "date-fns";
 import JsonLd, { getBreadcrumbJsonLd } from "@/components/JsonLd";
+
+const dateFormatter = new Intl.DateTimeFormat("es-ES", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+});
 
 export const metadata = {
   title: "Blog",
@@ -37,7 +42,7 @@ export default async function BlogIndex() {
       <div className="mx-auto px-6 pb-8 lg:px-8">
         <div className="py-8 sm:py-12 lg:pb-12">
           <div className="mx-auto">
-            <h1 className="text-4xl md:text-5xl font-medium">Blog</h1>
+            <h1 className="text-4xl md:text-5xl font-medium text-balance">Blog</h1>
             <p className="mt-4 text-lg text-stone-600 max-w-2xl">
               Ideas, reflexiones y consejos prácticos sobre branding, diseño web
               y estrategia digital.
@@ -45,9 +50,8 @@ export default async function BlogIndex() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 sm:mt-16">
               {postsData.edges.map(({ node: post }) => {
-                const formattedDate = format(
-                  new Date(post.date),
-                  "dd.MM.yyyy"
+                const formattedDate = dateFormatter.format(
+                  new Date(post.date)
                 );
                 return (
                   <article key={post.slug} className="flex flex-col gap-4">

@@ -38,7 +38,7 @@ export default function ServiciosIndex() {
             <div className="mx-auto max-w-screen-lg">
               {/* Hero */}
               <div className="text-left mb-16">
-                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
                   Lo que hacemos
                 </h1>
                 <p className="mt-6 text-lg text-stone-600 max-w-2xl">

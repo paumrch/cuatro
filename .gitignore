@@ -28,6 +28,12 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# google service account credentials
+cuatrodejunio-*.json
+
+# gsc data exports
+scripts/gsc-data/
+
 # vercel
 .vercel
 

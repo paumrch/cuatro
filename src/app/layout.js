@@ -42,6 +42,9 @@ export const metadata = {
   alternates: {
     canonical: "https://4dejunio.com",
   },
+  other: {
+    "theme-color": "#fafaf9",
+  },
 };
 
 const myFont = localFont({
@@ -103,11 +106,20 @@ const myFont = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={myFont.className}>
+      <head>
+        <meta name="theme-color" content="#fafaf9" />
+        <link rel="preconnect" href="https://wp.4dejunio.com" />
+      </head>
       <body className="text-stone-900 bg-stone-50">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-stone-900 focus:px-4 focus:py-2 focus:text-white focus:text-sm">
+          Saltar al contenido
+        </a>
         <JsonLd data={getOrganizationJsonLd()} />
         <JsonLd data={getWebSiteJsonLd()} />
         <SmoothScrolling>
-          <Transition>{children}</Transition>
+          <Transition>
+            <main id="main-content">{children}</main>
+          </Transition>
         </SmoothScrolling>
         <Analytics />
       </body>

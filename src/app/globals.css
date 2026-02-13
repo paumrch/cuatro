@@ -20,25 +20,37 @@
 }
 
 .post-content h1 {
-  @apply text-4xl font-medium mt-2 mb-4;
+  @apply text-4xl font-medium mt-2 mb-4 scroll-mt-20;
 }
 
 .post-content h2 {
-  @apply text-3xl font-medium mt-2 mb-4;
+  @apply text-3xl font-medium mt-2 mb-4 scroll-mt-20;
 }
 
 .post-content h3 {
-  @apply text-2xl font-medium mt-2 mb-4;
+  @apply text-2xl font-medium mt-2 mb-4 scroll-mt-20;
 }
 
 .post-content h4 {
-  @apply text-xl font-medium mt-2 mb-4;
+  @apply text-xl font-medium mt-2 mb-4 scroll-mt-20;
 }
 
 .post-content h5 {
-  @apply text-lg font-medium mt-2 mb-4;
+  @apply text-lg font-medium mt-2 mb-4 scroll-mt-20;
 }
 
 .post-content h6 {
-  @apply text-base font-medium mt-2 mb-4;
+  @apply text-base font-medium mt-2 mb-4 scroll-mt-20;
+}
+
+/* Respetar preferencia de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

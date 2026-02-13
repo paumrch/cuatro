@@ -5,14 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Transition = ({ children }) => {
   const [isClient, setIsClient] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    setPrefersReducedMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   }, []);
 
   // Renderizar siempre el contenido para que los crawlers lo vean.
   // Solo animar en client.
-  if (!isClient) {
+  if (!isClient || prefersReducedMotion) {
     return <div>{children}</div>;
   }
 

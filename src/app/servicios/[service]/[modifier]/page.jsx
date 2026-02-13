@@ -123,7 +123,7 @@ function ServiceCityPage({ service, city }) {
               {/* Hero */}
               <div className="mb-12">
                 <span className="text-3xl">{service.icon}</span>
-                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight text-balance">
                   {service.name} {city.preposition}
                 </h1>
                 <p className="mt-4 text-lg text-stone-600">
@@ -345,7 +345,7 @@ function ServiceSectorPage({ service, sector }) {
               {/* Hero */}
               <div className="mb-12">
                 <span className="text-3xl">{service.icon}</span>
-                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl font-semibold mt-4 tracking-tight text-balance">
                   {service.name} {sector.preposition}
                 </h1>
                 <p className="mt-4 text-lg text-stone-600">

@@ -92,7 +92,7 @@ export default async function Project({ params }) {
         </div>
         <div id="projectContent" className="mx-auto">
           <div id="projectTitle" className="mt-6">
-            <h1 className="text-lg font-medium">
+            <h1 className="text-lg font-medium text-balance">
               {project.projectsContent.projectTitle}
             </h1>
           </div>

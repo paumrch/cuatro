@@ -31,7 +31,7 @@ export default function About() {
                     className="flex items-center group"
                     target="_blank"
                   >
-                    <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
+                    <ArrowRightIcon className="mr-2 w-4 h-5 text-current" aria-hidden="true" />
                     Echa un vistazo en LinkedIn
                     <span className="relative overflow-hidden">
                       <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
@@ -63,7 +63,7 @@ export default function About() {
                           className="flex items-center group"
                           target="_blank"
                         >
-                          <ArrowRightIcon className="mr-2 w-4 h-5 text-current" />
+                          <ArrowRightIcon className="mr-2 w-4 h-5 text-current" aria-hidden="true" />
                           LinkedIn
                           <span className="relative overflow-hidden">
                             <span className="absolute inset-x-0 bottom-0 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>

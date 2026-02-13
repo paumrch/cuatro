@@ -1,8 +1,13 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api";
-import { format } from "date-fns";
 import Image from "next/image";
+
+const dateFormatter = new Intl.DateTimeFormat("es-ES", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+});
 import { notFound } from "next/navigation";
 import JsonLd, { getArticleJsonLd, getBreadcrumbJsonLd } from "@/components/JsonLd";
 
@@ -48,7 +53,7 @@ export default async function Post({ params }) {
   }
 
   const { post, morePosts } = data;
-  const formattedDate = format(new Date(post.date), "dd.MM.yyyy");
+  const formattedDate = dateFormatter.format(new Date(post.date));
 
   return (
     <>
@@ -75,7 +80,7 @@ export default async function Post({ params }) {
           <div className="py-12 sm:py-18 lg:pb-40">
             <div className="mx-auto max-w-screen-md px-4">
               <div className="text-left">
-                <h1 className="text-3xl font-semibold">{post.title}</h1>
+                <h1 className="text-3xl font-semibold text-balance">{post.title}</h1>
                 <div className="flex gap-4 mt-4">
                   <span className="bg-stone-100 rounded-full px-2 py-1 text-xs uppercase">
                     {post.categories.edges[0]?.node?.name || "No Category"}

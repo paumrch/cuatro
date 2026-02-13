@@ -1,16 +1,24 @@
 'use client'
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedElement from "../AnimatedElement";
 
 const AnimatedVideo = () => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setPrefersReducedMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+  }, []);
+
   return (
     <AnimatedElement animation={{ duration: 0.7 }} delay={1}>
       <video
         width="1920"
         height="1080"
         muted
-        autoPlay
+        autoPlay={!prefersReducedMotion}
         playsInline
         loop
         preload="metadata"
