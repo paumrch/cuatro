@@ -61,19 +61,21 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div
-          className={`hidden md:flex items-center gap-8 animated-component ${
+          className={`hidden md:flex flex-1 items-center animated-component ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          <div className="flex-1 flex items-center justify-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm uppercase tracking-wide text-stone-500 hover:text-stone-900 transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
           <div className="flex items-center text-xs text-stone-400">
             <p className="uppercase">Valencia</p>
             <div className="h-1 w-1 bg-stone-400 rounded-full mx-2"></div>
@@ -81,14 +83,6 @@ export default function Navbar() {
               <Time />
             </div>
           </div>
-          <Link
-            href="https://www.cal.eu/paumarch/15min"
-            target="_blank"
-            className="inline-flex items-center rounded-md border border-stone-300 bg-transparent px-4 py-1.5 text-sm text-stone-900 hover:border-stone-900 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2"
-          >
-            <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full mr-2"></span>
-            Contacto
-          </Link>
         </div>
 
         {/* Mobile: time + hamburger */}
@@ -161,17 +155,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 mt-4 border-t border-stone-200">
-                <Link
-                  href="https://www.cal.eu/paumarch/15min"
-                  target="_blank"
-                  onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center rounded-md border border-stone-300 bg-transparent px-6 py-2.5 text-sm font-medium text-stone-900 hover:border-stone-900 transition-colors duration-300"
-                >
-                  <span className="h-2 w-2 bg-emerald-500 rounded-full mr-2"></span>
-                  Agendar reunión
-                </Link>
-              </div>
             </nav>
           </div>
         </div>
